@@ -1,2 +1,18 @@
 @use 'scss-reset' as *;
 
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: $font-body;
+  background-color: $color-background;
+  color: $color-black;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  font-family: $font-title;
+  font-weight: 400;
+}
