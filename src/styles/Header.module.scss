@@ -1,0 +1,42 @@
+@use '_variables' as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1180px;
+  height: 100px;
+  z-index: 10;
+
+  h1 {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-2xl;
+    color: #fff;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      gap: 2.4rem;
+      
+      li {
+        &:last-child {
+          margin-left: 2.4rem;
+        }
+
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

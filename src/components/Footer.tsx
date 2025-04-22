@@ -1,8 +1,9 @@
+import styles from "../styles/Footer.module.scss";
 
 export default function Footer() {
   return (
-    <footer>
-      <h1>진원상사</h1>
+    <footer className={styles.footer}>
+      <h1>푸터영역입니다.</h1>
     </footer>
-  )
+  );
 }

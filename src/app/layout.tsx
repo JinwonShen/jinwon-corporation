@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+// import Link from "next/link";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "@/styles/globals.scss";
@@ -12,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <head>
+        {/* crossOrigin="anonymous" ???? */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

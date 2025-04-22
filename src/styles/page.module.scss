@@ -1,0 +1,11 @@
+@use '_variables' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    max-width: 1180px;
+    margin: auto;
+  }
+}
