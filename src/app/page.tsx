@@ -1,15 +1,19 @@
 import styles from "@/styles/page.module.scss";
 import SwiperContainer from "@/components/SwiperContainer";
+import CustomOrderContainer from "@/components/CustomOrderContainer";
+import ProductGallery from "@/components/ProductGallery";
+import Location from "@/components/Location";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
     <div className={styles.wrapper}>
       <SwiperContainer />
       <main className={styles.main}>
-        <article>
-          <h2>맞춤 주문제작 전문</h2>
-          <span>맞춤/주문제작 전문</span>
-        </article>
+        <CustomOrderContainer />
+        <ProductGallery />
+        <Location />
+        <Contact />
       </main>
     </div>
   );

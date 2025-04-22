@@ -1,0 +1,100 @@
+@use "_variables.scss" as *;
+
+.customOrderContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  padding: 96px 0;
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      width: 100%;
+      font-size: $font-size-2xl;
+      text-align: center;
+    }
+
+    span {
+      width: 100%;
+      font-size: $font-size-base;
+      text-align: center;
+    }
+  }
+
+  .imgContainer {
+    padding-top: 48px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    .imgBox {
+      width: calc(100% / 6);
+      background-color: transparent;
+      border: 1px solid $color-light-gray;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modalContent {
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+
+      .modal.active & {
+        transform: scale(1);
+      }
+
+      img {
+        width: 30vw;
+        height: 60vh;
+        object-fit: contain;
+      }
+
+      .closeButton {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: $font-size-2xl;
+        color: #fff;
+        transition: all 0.3s;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
