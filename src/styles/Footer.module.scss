@@ -4,7 +4,66 @@
   left: 0;
   right: 0;
   margin: auto;
-  max-width: 1180px;
-  height: 300px;
-  background-color: #eaeaea;
+  padding: 0 calc((100% - 1180px) / 2);
+  height: auto;
+  background-color: $color-light-gray-bg;
+  border-top: 1px solid $color-light-gray;
+
+  .footerInner {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+    padding: 24px 0;
+
+    h1 {
+      font-size: $font-size-2xl;
+    }
+
+    .footerContents {
+      width: 50%;
+
+      nav {
+        margin-bottom: 24px;
+
+        ul {
+          display: flex;
+          gap: 12px;
+  
+          li {
+            a {
+              font-size: $font-size-sm;
+            }
+
+            &:last-child {
+              margin-left: 12px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      .addressContainer {
+        display: flex;
+        flex-direction: column;
+        // gap: 4px;
+        font-size: $font-size-sm;
+
+        span {
+          font-size: $font-size-sm;
+          &::after {
+            content: " ";
+            margin: 0 6px;
+          }
+          &:last-child::after {
+            content: none;
+          }
+        }
+      }
+
+      .copyright {
+        margin-top: 24px;
+        font-size: $font-size-xs;
+      }
+    }
+  }
 }
