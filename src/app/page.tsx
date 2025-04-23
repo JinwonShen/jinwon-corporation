@@ -12,8 +12,10 @@ export default function Home() {
       <main className={styles.main}>
         <CustomOrderContainer />
         <ProductGallery />
-        <Location />
-        <Contact />
+        <div className={styles.contact}>
+          <Location />
+          <Contact />
+        </div>
       </main>
     </div>
   );

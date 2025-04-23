@@ -2,6 +2,7 @@
 
 .customOrderContainer {
   position: relative;
+  left: calc((100% - 1180px) / 2);
   width: 100%;
   max-width: 1180px;
   padding: 96px 0;

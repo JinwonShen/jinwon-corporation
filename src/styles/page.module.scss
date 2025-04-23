@@ -1,11 +1,18 @@
 @use '_variables' as *;
 
 .wrapper {
+  width: 100%;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   .main {
     // max-width: 1180px;
     margin: auto;
+  }
+
+  .contact {
+    display: flex;
   }
 }
