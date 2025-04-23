@@ -15,6 +15,11 @@
       width: 100%;
       font-size: $font-size-2xl;
       text-align: center;
+      
+      span {
+        font-size: $font-size-2xl;
+        color: $color-primary;
+      }
     }
 
     span {

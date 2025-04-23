@@ -26,7 +26,9 @@ export default function CustomOrderContainer() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.6 }}
       >
-        <h2>맞춤/주문제작 전문</h2>
+        <h2>
+          맞춤<span>/</span>주문제작 전문
+        </h2>
         <span>다양한 제작 사례를 확인해보세요.</span>
       </motion.div>
       <div className={styles.imgContainer}>
