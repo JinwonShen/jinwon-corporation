@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
-        <h1>진원상사</h1>
+        <h2>진원상사</h2>
 
         <div className={styles.footerContents}>
           <nav aria-label="푸터 링크">

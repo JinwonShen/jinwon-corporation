@@ -66,7 +66,7 @@ const slideData: SlideData[] = [
 export default function ProductGallery() {
   return (
     <article className={styles.galleryContainer}>
-      <h1>제품 미리보기</h1>
+      <h2>제품 미리보기</h2>
       <Swiper
         modules={[Pagination, Autoplay]}
         // spaceBetween={24} // 슬라이드 사이 간격
