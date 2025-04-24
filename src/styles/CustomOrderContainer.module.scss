@@ -41,6 +41,7 @@
     .imgBox {
       width: calc(100% / 6);
       background-color: transparent;
+      border-radius: 4px;
       border: 1px solid $color-light-gray;
 
       img {

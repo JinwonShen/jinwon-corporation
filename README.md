@@ -80,11 +80,13 @@ const position = {
   style={{ width: "100%", height: "100%" }}
   level={3}
 >
-  <MapMarker position={position}>
-    <div>진원상사</div>
-  </MapMarker>
+  <MapMarker position={position} />
 </KakaoMap>
 ```
+
+### ✅ 사용자 정의 텍스트 제거 및 기본 말풍선 유지 방법
+- `<MapMarker>` 내부에 텍스트를 넣지 않으면 기본 말풍선 UI 유지됨
+- 직접 텍스트를 넣을 경우 스타일 충돌 가능
 
 ---
 
@@ -106,6 +108,7 @@ const position = {
 ## 4. 기타
 - `.env.local`에 환경 변수 저장
 - 레이아웃 구조는 `layout.tsx`에서 관리하며 글로벌 스타일, 헤더, 푸터 포함
+- KakaoMapScriptProvider는 react-kakao-maps-sdk 최신 버전에서는 필요 없음
 
 ---
 
@@ -116,6 +119,7 @@ const position = {
 | react-kakao-maps-sdk 설치 충돌 | `--legacy-peer-deps` 옵션 추가 + v2.1.3 사용 |
 | KakaoMapApiKey 전달 오류 | 최신 SDK 버전에서는 `<KakaoMapScriptProvider>` 필요 없음 |
 | hydration error | 서버/클라이언트 렌더링 일치 문제 해결 후 정상 동작 확인 |
+| MapMarker 겹침 현상 | 사용자 정의 말풍선을 제거하고 기본 말풍선 사용으로 해결 |
 
 ---
 
@@ -127,6 +131,6 @@ const position = {
 ├── styles
 │   ├── ProductGallery.module.scss
 │   ├── Location.module.scss
+├── .env.local                 # 카카오 API 키 보관
 ```
 
----
