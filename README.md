@@ -1,7 +1,7 @@
-# 진원상사 프론트엔드 프로젝트 정리
+# 진원상사 프로젝트 정리
 
 ## 프로젝트 개요
-- 기술 스택: **Next.js 14**, **TypeScript**, **SCSS Modules**, **Framer Motion**, **Swiper.js**, **Kakao Maps SDK**
+- 기술 스택: **Next.js 14**, **TypeScript**, **SCSS Modules**, **Framer Motion**, **Swiper.js**, **Kakao Maps SDK**, **EmailJS**
 - 목적: 진원상사 기업 소개용 반응형 웹사이트 구현
 
 ---
@@ -57,7 +57,7 @@ import 'swiper/css/pagination';
 
 ### ✅ 환경 변수 설정
 ```env
-NEXT_PUBLIC_KAKAO_API_KEY=여기에_발급받은_앱키_입력
+NEXT_PUBLIC_KAKAO_API_KEY=카카오에서 발급받은 JavaScript 키
 ```
 
 ### ✅ 설치 (React 19 사용 시)
@@ -67,31 +67,55 @@ npm install react-kakao-maps-sdk@2.1.3 --legacy-peer-deps
 
 ### ✅ 사용 예시
 ```tsx
-"use client";
 import { Map as KakaoMap, MapMarker } from "react-kakao-maps-sdk";
 
-const position = {
-  lat: 37.3415932858139,
-  lng: 126.805237775881,
-};
-
-<KakaoMap
-  center={position}
-  style={{ width: "100%", height: "100%" }}
-  level={3}
->
+<KakaoMap center={position} level={3} style={{ width: "100%", height: "450px" }}>
   <MapMarker position={position} />
 </KakaoMap>
 ```
 
-### ✅ 사용자 정의 텍스트 제거 및 기본 말풍선 유지 방법
-- `<MapMarker>` 내부에 텍스트를 넣지 않으면 기본 말풍선 UI 유지됨
-- 직접 텍스트를 넣을 경우 스타일 충돌 가능
+---
+
+## 3. 이메일 문의 폼 구현 (EmailJS)
+
+### 📌 목표
+- 백엔드 없이 EmailJS를 사용해 클라이언트 측에서 메일 전송 가능하게 구현
+
+### ✅ 설치
+```bash
+npm install @emailjs/browser
+```
+
+### ✅ 환경 변수 설정
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_XXXXXXX
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_XXXXXXX
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=XXXXXXX
+```
+❗️주의: `.env.local`에는 Public Key에서 `public_` 접두사를 제거한 값만 입력해야 정상 동작함.
+
+### ✅ 템플릿 예시 구성 (EmailJS)
+```text
+To Email: 운영자 이메일
+From Name: {{name}}
+Reply To: {{email}}
+Subject: Contact Us: {{subject}}
+Message: {{message}}
+```
+
+### ✅ 전송 함수 예시
+```tsx
+emailjs.sendForm(
+  serviceId,
+  templateId,
+  e.currentTarget,
+  publicKey
+)
+```
 
 ---
 
-## 3. 애니메이션 효과 (Framer Motion)
-- Swiper 슬라이드 및 기타 섹션에 등장 애니메이션 적용
+## 4. 애니메이션 효과 (Framer Motion)
 ```tsx
 <motion.div
   initial={{ opacity: 0, y: 40 }}
@@ -105,32 +129,33 @@ const position = {
 
 ---
 
-## 4. 기타
+## 5. 기타
 - `.env.local`에 환경 변수 저장
-- 레이아웃 구조는 `layout.tsx`에서 관리하며 글로벌 스타일, 헤더, 푸터 포함
-- KakaoMapScriptProvider는 react-kakao-maps-sdk 최신 버전에서는 필요 없음
+- `layout.tsx`에서 글로벌 스타일, 헤더, 푸터 구성 포함
+- `Location`과 `Contact` 영역은 동일 높이로 구성 (`height: 500px` 또는 `min-height: 500px`)
 
 ---
 
 ## 💡 문제 및 해결 이력 요약
 | 문제 | 해결 방법 |
 |------|-------------|
-| Swiper Slide 크기 및 배치 | `.swiper`, `.swiperSlide`에 `max-width` 및 `margin: auto` 설정 |
-| react-kakao-maps-sdk 설치 충돌 | `--legacy-peer-deps` 옵션 추가 + v2.1.3 사용 |
-| KakaoMapApiKey 전달 오류 | 최신 SDK 버전에서는 `<KakaoMapScriptProvider>` 필요 없음 |
-| hydration error | 서버/클라이언트 렌더링 일치 문제 해결 후 정상 동작 확인 |
-| MapMarker 겹침 현상 | 사용자 정의 말풍선을 제거하고 기본 말풍선 사용으로 해결 |
+| Swiper Slide 크기 및 배치 | `.swiper`, `.swiperSlide`에 `max-width`, `margin: auto` 설정 |
+| react-kakao-maps-sdk 설치 충돌 | `--legacy-peer-deps` 옵션 + v2.1.3 명시 설치 |
+| KakaoMapApiKey 전달 오류 | `<KakaoMapScriptProvider>` 없이 바로 전달 가능 (최신 버전 기준) |
+| hydration error | 서버/클라이언트 렌더링 일치 문제 해결로 정상 작동 |
+| EmailJS Public Key 오류 | `.env.local`에서는 `public_` 접두사 제거 후 저장해야 정상 작동 |
 
 ---
 
 ## 🗂️ 주요 파일 구조
 ```
 ├── components
-│   ├── ProductGallery.tsx     # Swiper 슬라이드 구성
-│   ├── Location.tsx           # 카카오 맵 위치 표시
+│   ├── ProductGallery.tsx       # Swiper 슬라이드 구성
+│   ├── Location.tsx             # 카카오 맵 위치 표시
+│   ├── Contact.tsx              # 이메일 문의 폼 구성
 ├── styles
 │   ├── ProductGallery.module.scss
 │   ├── Location.module.scss
-├── .env.local                 # 카카오 API 키 보관
+│   ├── Contact.module.scss
 ```
 
