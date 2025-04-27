@@ -61,11 +61,9 @@ export default function Contact() {
       });
   };
 
-  console.log("templateId", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
-
   return (
     <div className={styles.contactContainer}>
-      <h2>Contact</h2>
+      <h2>문의하기</h2>
 
       <form className={styles.contactForm} onSubmit={handleSubmit}>
         <div className={styles.userInfo}>

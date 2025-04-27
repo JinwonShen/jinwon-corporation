@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   max-width: 1180px;
-  margin-bottom: 96px;
+  margin: 0 auto 96px;
   
   h2 {
     max-width: 1180px;
@@ -41,8 +41,8 @@
         }
 
         .linkButton {
-          width: 30%;
-          padding: 20px 0;
+          align-self: flex-start;
+          padding: 16px 24px;
           border-radius: 10000px;
           background-color: $color-primary;
           margin-bottom: 48px;
@@ -52,7 +52,7 @@
             margin-bottom: 100px;
             font-family: $font-body;
             font-weight: 700;
-            // font-size: $font-size-lg;
+            font-size: $font-size-sm;
             transition: all 0.3s;
             color: #fff;
           }
@@ -89,7 +89,7 @@
 .swiperPagination {
   position: absolute;
   bottom: 0;
-  z-index: 20;
+  z-index: 11;
 
   :global(.custom-bullet-gallery) {
     position: relative;
@@ -139,4 +139,53 @@
     border-radius: 50%;
     background: $color-primary;
   } 
+}
+
+
+
+@media (max-width: $breakpoint-pc) {
+  .galleryContainer {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .swiper {
+    .swiperSlide {
+      .text {
+        .textInfo {
+          p {
+            font-size: $font-size-sm;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .galleryContainer {
+    .swiper {
+      height: auto;
+      .swiperSlide {
+        flex-direction: column;
+  
+        .text {
+          width: 100%;
+
+          .linkButton {
+            margin-top: 24px;
+          }
+        }
+      }
+
+      .imageWrap {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .swiperPagination {
+    bottom: -48px;
+  }
 }

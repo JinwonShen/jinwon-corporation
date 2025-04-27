@@ -11,7 +11,7 @@ export default function Location() {
 
   return (
     <article className={styles.locationContainer}>
-      <h2>Location</h2>
+      <h2>오시는길</h2>
       <KakaoMap center={position} level={3} className={styles.kakaoMap}>
         <MapMarker position={position} />
         <CustomOverlayMap position={position} yAnchor={1}>

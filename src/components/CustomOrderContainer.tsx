@@ -24,14 +24,20 @@ export default function CustomOrderContainer() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.6 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <h2>
           맞춤<span>/</span>주문제작 전문
         </h2>
         <span>다양한 제작 사례를 확인해보세요.</span>
       </motion.div>
-      <div className={styles.imgContainer}>
+      <motion.div
+        className={styles.imgContainer}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
         {imagePaths.map((path, index) => (
           <div
             key={path}
@@ -52,7 +58,7 @@ export default function CustomOrderContainer() {
             />
           </div>
         ))}
-      </div>
+      </motion.div>
 
       <dialog
         className={`${styles.modal} ${selectedImage ? styles.active : ""}`}

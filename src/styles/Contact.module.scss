@@ -23,6 +23,7 @@
 
       span {
         flex-grow: auto;
+        flex-shrink: 0;
       }
 
       input {
@@ -46,6 +47,7 @@
       display: flex;
       justify-content: space-between;
     }
+
     .userInfo {
       display: flex;
       justify-content: space-between;
@@ -73,5 +75,11 @@
       font-size: $font-size-sm;
       color: #fff;
     }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .contactContainer {
+    width: 100%;
   }
 }

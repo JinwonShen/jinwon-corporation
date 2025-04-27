@@ -30,6 +30,7 @@
           gap: 12px;
   
           li {
+            flex-basis: 1;
             a {
               font-size: $font-size-sm;
             }
@@ -63,6 +64,20 @@
       .copyright {
         margin-top: 24px;
         font-size: $font-size-xs;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-pc) {
+  .footer {
+    padding: 0 24px;
+
+    .footerInner {
+      flex-direction: column;
+
+      .footerContents {
+        width: 100%;
       }
     }
   }

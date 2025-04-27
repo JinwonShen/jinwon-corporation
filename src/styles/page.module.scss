@@ -1,21 +1,29 @@
 @use '_variables' as *;
 
 .wrapper {
+  position: relative;
   width: 100%;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  .main {
-    // max-width: 1180px;
-    margin: auto;
-  }
-
   .contact {
+    max-width: 1180px;
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
-    margin-bottom: 96px;
+    margin: 0 auto 96px;
+  }
+}
+
+@media (max-width: $breakpoint-pc) {
+  .contact {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .contact {
+    flex-direction: column;
   }
 }
