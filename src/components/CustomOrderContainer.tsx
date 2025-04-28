@@ -6,12 +6,12 @@ import Image from "next/image";
 import { useState } from "react";
 
 const imagePaths = [
-  "/customOrderImg(1).jpg",
-  "/customOrderImg(2).jpg",
-  "/customOrderImg(3).jpg",
-  "/customOrderImg(4).jpg",
-  "/customOrderImg(5).jpg",
-  "/customOrderImg(6).jpg",
+  "/customOrderImg(1).png",
+  "/customOrderImg(2).png",
+  "/customOrderImg(3).png",
+  "/customOrderImg(4).png",
+  "/customOrderImg(5).png",
+  "/customOrderImg(6).png",
 ];
 
 export default function CustomOrderContainer() {
