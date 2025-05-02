@@ -1,6 +1,6 @@
 "use client";
 
-import { Map as KakaoMap, MapMarker, CustomOverlayMap } from "react-kakao-maps-sdk";
+import { CustomOverlayMap, Map as KakaoMap, MapMarker } from "react-kakao-maps-sdk";
 import styles from "../styles/Location.module.scss";
 
 export default function Location() {
@@ -12,7 +12,12 @@ export default function Location() {
   return (
     <article className={styles.locationContainer}>
       <h2>오시는길</h2>
-      <KakaoMap center={position} level={3} className={styles.kakaoMap}>
+      <KakaoMap
+        center={position}
+        level={3}
+        style={{ width: "100%", height: "500px" }}
+        className={styles.kakaoMap}
+      >
         <MapMarker position={position} />
         <CustomOverlayMap position={position} yAnchor={1}>
           <div className={styles.mapLabel}>진원상사</div>

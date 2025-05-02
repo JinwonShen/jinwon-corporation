@@ -1,9 +1,9 @@
-import styles from "@/styles/page.module.scss";
-import SwiperContainer from "@/components/SwiperContainer";
-import CustomOrderContainer from "@/components/CustomOrderContainer";
-import ProductGallery from "@/components/ProductGallery";
-import Location from "@/components/Location";
 import Contact from "@/components/Contact";
+import CustomOrderContainer from "@/components/CustomOrderContainer";
+import Location from "@/components/Location";
+import ProductGallery from "@/components/ProductGallery";
+import SwiperContainer from "@/components/SwiperContainer";
+import styles from "@/styles/page.module.scss";
 
 import Script from "next/script";
 
