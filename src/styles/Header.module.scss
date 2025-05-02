@@ -156,6 +156,27 @@
       }
     }
   }
+
+  // subPage Header영역 스타일링
+  &.subHeader {
+    a {
+      color: #333;
+    }
+
+    nav {
+      ul {
+        li {
+          &:last-child {
+            a {
+              &:hover {
+                color: #333;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 

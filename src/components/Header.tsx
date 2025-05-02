@@ -1,14 +1,20 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+
 import Link from "next/link";
 import styles from "../styles/Header.module.scss";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isSubPage = pathname !== "/"; // 메인페이지가 아닐경우 ?
+  const headerClass = isSubPage ? `${styles.header} ${styles.subHeader}` : styles.header;
 
   return (
-    <header className={styles.header}>
+    <header className={headerClass}>
       <h1>
         <Link href={"/"}>진원상사</Link>
       </h1>

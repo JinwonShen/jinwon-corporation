@@ -1,11 +1,13 @@
 @use '_variables' as *;
 
 .footer {
+  position: relative;
   left: 0;
   right: 0;
+  bottom: 0;
   margin: auto;
   padding: 0 calc((100% - 1180px) / 2);
-  height: auto;
+  width: 100%;
   background-color: $color-light-gray-bg;
   border-top: 1px solid $color-light-gray;
 

@@ -3,16 +3,22 @@
 .wrapper {
   position: relative;
   width: 100%;
+  height: auto;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  .contact {
-    max-width: 1180px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto 96px;
+  .main {
+    width: 100%;
+    height: auto;
+    
+    .contact {
+      max-width: 1180px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto 96px;
+    }
   }
 }
 
