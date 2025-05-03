@@ -25,6 +25,8 @@ export default function Footer() {
           </nav>
 
           <address className={styles.addressContainer}>
+            <span>대표자: 신준기</span>
+
             <div className={styles.address}>
               <span>사업자 등록번호: 134-16-17969</span>
               <span>주소: 안산시 단원구 선부2동 1032-3, 1층 진원상사</span>

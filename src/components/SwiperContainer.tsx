@@ -1,14 +1,14 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import "swiper/css"; // 기본 스타일
 import "swiper/css/navigation"; // 사용하면 navigation 버튼용
 import "swiper/css/pagination"; // 페이지네이션 동그라미용
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 import styles from "../styles/SwiperContainer.module.scss";
 
 type SlideData = {

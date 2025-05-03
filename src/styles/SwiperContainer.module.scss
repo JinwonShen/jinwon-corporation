@@ -52,7 +52,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(0, 0, 0, 0.4); // 딤드 정도 조절 (0.3 ~ 0.6)
+          background: rgba(0, 0, 0, 0.2); // 딤드 정도 조절 (0.3 ~ 0.6)
           backdrop-filter: blur(2px); // 💡 블러 처리 추가
           z-index: 10;
         }
