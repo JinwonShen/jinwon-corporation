@@ -68,12 +68,21 @@
     .submitButton {
       align-self: flex-end;
       width: 50%;
+      height: 48px;
       margin-top: 24px;
-      padding: 12px;
-      border-radius: 4px;
+      border-radius: 10000px;
+      outline: 1px solid #fff;
       background-color: $color-primary;
       font-size: $font-size-sm;
+      font-weight: 700;
       color: #fff;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #fff;
+        outline: 1px solid $color-primary;
+        color: $color-primary;
+      }
     }
   }
 }

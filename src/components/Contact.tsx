@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import styles from "../styles/Contact.module.scss";
 
 type FormDataType = {
@@ -63,7 +63,7 @@ export default function Contact() {
 
   return (
     <div className={styles.contactContainer}>
-      <h2>문의하기</h2>
+      <h2>간편문의</h2>
 
       <form className={styles.contactForm} onSubmit={handleSubmit}>
         <div className={styles.userInfo}>
@@ -108,11 +108,6 @@ export default function Contact() {
         <label className={styles.file}>
           <span>첨부파일</span>
           <input type="file" name="attachment" onChange={handleFileChange} />
-        </label>
-
-        <label className={styles.link}>
-          <span>관련 링크</span>
-          <input type="url" name="link" value={formData.link} onChange={handleChange} />
         </label>
 
         <button type="submit" className={styles.submitButton}>

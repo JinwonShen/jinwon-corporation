@@ -28,7 +28,7 @@ export default function Header() {
             <Link href={"/products"}>제품소개</Link>
           </li>
           <li>
-            <Link href={"/contact"}>문의하기</Link>
+            <Link href={"/contact"}>견적문의</Link>
           </li>
           <li>
             <Link href={"/store"}>스토어 바로가기</Link>
