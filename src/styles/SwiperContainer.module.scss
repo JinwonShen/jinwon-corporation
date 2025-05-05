@@ -118,24 +118,12 @@
 }
 
 @media (max-width: $breakpoint-tablet) {
-  .swiper {
-    .swiperSlide {
-      .textCont {
-        left: 10% !important;
-    
-        span {
-          font-size: $font-size-lg !important;
-        }
-      
-        h1 {
-          font-size: $font-size-2xl !important;
-        }
-      }
-    }
-  }
-
   .swiperPagination {
     left: 10%;
+  }
+
+  .textCont {
+    left: 10% !important;
   }
 }
 

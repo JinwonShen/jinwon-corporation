@@ -24,3 +24,9 @@ body {
 h1, h2, h3, h4, h5, h6, strong {
   font-family: $font-title;
 }
+
+@media (max-width: $breakpoint-tablet) {
+  html {
+    font-size: 56.25%; // 1rem = 9px
+  }
+}

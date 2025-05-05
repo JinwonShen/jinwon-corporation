@@ -149,19 +149,19 @@
   }
 }
 
-@media (max-width: $breakpoint-tablet) {
-  .swiper {
-    .swiperSlide {
-      .text {
-        .textInfo {
-          p {
-            font-size: $font-size-sm;
-          }
-        }
-      }
-    }
-  }
-}
+// @media (max-width: $breakpoint-tablet) {
+//   .swiper {
+//     .swiperSlide {
+//       .text {
+//         .textInfo {
+//           p {
+//             font-size: $font-size-sm;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: $breakpoint-mobile) {
   .galleryContainer {

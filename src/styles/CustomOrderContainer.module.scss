@@ -43,7 +43,6 @@
 
     &::-webkit-scrollbar {
       height: 6px;
-      background: #f0f0f0; // 트랙을 밝은 회색으로
     }
     
     &::-webkit-scrollbar-thumb {
@@ -53,6 +52,7 @@
     
     &::-webkit-scrollbar-track {
       background: #f0f0f0; // 트랙도 밝게 통일
+      border-radius: 3px;
     }
 
     .imgBox {
@@ -133,18 +133,18 @@
 
 @media (max-width: $breakpoint-mobile) {
   .customOrderContainer {
-    .textContainer {
-      h2 {
-        font-size: $font-size-xl;
+    // .textContainer {
+    //   h2 {
+    //     font-size: $font-size-xl;
         
-        > span {
-          font-size: $font-size-xl;
-        }
-      }
-      span {
-        font-size: $font-size-sm;
-      }
-    }
+    //     > span {
+    //       font-size: $font-size-xl;
+    //     }
+    //   }
+    //   span {
+    //     font-size: $font-size-sm;
+    //   }
+    // }
 
     .imgBox {
       width: 120px !important;
