@@ -12,9 +12,9 @@ import styles from "./page.module.scss";
 
 const partnerLogos = [
   { id: "logos1", src: "partner(1).png" },
-  { id: "logos2", src: "partner(2).png" },
+  { id: "logos2", src: "partner(4).jpg" },
   { id: "logos3", src: "partner(3).png" },
-  { id: "logos4", src: "partner(4).png" },
+  { id: "logos4", src: "partner(2).png" },
   { id: "logos5", src: "partner(5).png" },
 ];
 
