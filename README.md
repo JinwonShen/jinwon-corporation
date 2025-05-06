@@ -2,7 +2,7 @@
 
 ## 프로젝트 개요
 
-* 기술 스택: **Next.js 14**, **TypeScript**, **SCSS Modules**, **Framer Motion**, **Swiper.js**, **Kakao Maps SDK**, **EmailJS**
+* 기술 스택: **Next.js 14**, **TypeScript**, **SCSS Modules**, **Framer Motion**, **Swiper.js**, **Kakao Maps SDK**, **EmailJS**, **Firebase Storage**
 * 목적: 진원상사 기업 소개용 반응형 웹사이트 구현
 
 ---
@@ -113,11 +113,12 @@ export default function MapSection() {
 
 ---
 
-## 3. 이메일 문의 폼 구현 (EmailJS)
+## 3. 이메일 문의 폼 구현 (EmailJS + Firebase Storage)
 
 ### 📌 목표
 
 * 백엔드 없이 EmailJS를 사용해 클라이언트 측에서 메일 전송 가능하게 구현
+* 첨부파일 용량 제한 우회를 위해 Firebase Storage 사용
 
 ### ✅ 설치
 
@@ -145,6 +146,12 @@ emailjs.sendForm(
   publicKey
 )
 ```
+
+### ✅ Firebase Storage 연동 요약
+
+* `uploadFile(file: File)` 함수로 `uploads/` 경로에 업로드 후 `getDownloadURL`을 반환
+* 업로드된 URL은 EmailJS 템플릿에 포함
+* Storage 규칙은 익명 업로드만 허용되도록 제한 설정
 
 ---
 
@@ -184,6 +191,8 @@ emailjs.sendForm(
 | EmailJS Public Key 오류      | `.env.local`에서는 `public_` 접두사 제거 후 저장해야 정상 작동              |
 | 카카오맵 비노출 오류                | `localhost:3000` 도메인 미등록 → 카카오 플랫폼에 도메인 등록 후 해결            |
 | 카카오맵 빈 화면 표시               | `window.kakao` 로딩 여부를 `setInterval`로 감지해 `isLoaded` 이후 렌더링 |
+| EmailJS 첨부파일 용량 초과         | Firebase Storage에 업로드 후 링크만 전송하는 방식으로 우회 처리                |
+| Storage 규칙 문제              | 익명 사용자의 쓰기 권한만 허용하는 방식으로 CORS 및 보안 설정 완료                   |
 
 ---
 
@@ -198,6 +207,9 @@ emailjs.sendForm(
 │   ├── about/page.tsx           # 회사 소개 페이지
 │   ├── products/page.tsx        # 제품 소개 페이지
 │   ├── contact/page.tsx         # 문의 페이지
+├── lib
+│   ├── firebase.ts              # Firebase 앱 초기화
+│   ├── uploadFile.ts            # Firebase Storage 업로드 유틸 함수
 ├── styles
 │   ├── ProductGallery.module.scss
 │   ├── Location.module.scss
@@ -211,3 +223,4 @@ emailjs.sendForm(
 
 * 애니메이션 반복 여부 옵션화
 * 제품소개 페이지의 필터/카테고리 정렬 기능
+* Firebase Storage에 업로드된 파일 자동 삭제 기능 설정 고려

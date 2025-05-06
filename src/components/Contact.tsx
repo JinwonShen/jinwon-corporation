@@ -107,7 +107,15 @@ export default function Contact() {
 
         <label className={styles.file}>
           <span>첨부파일</span>
-          <input type="file" name="attachment" onChange={handleFileChange} />
+          {/* <input type="file" name="file" /> */}
+          <input
+            type="file"
+            id="fileUpload"
+            className={styles.hiddenFileInput}
+            onChange={handleFileChange}
+          />
+          <label htmlFor="fileUpload">파일 선택</label>
+          <span className="fileName">선택된 파일 없음</span>
         </label>
 
         <button type="submit" className={styles.submitButton}>

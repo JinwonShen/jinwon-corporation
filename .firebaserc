@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "jinwon-corporation",
+    "jinwon-corporation": "jinwon-corporation"
+  },
+  "targets": {},
+  "etags": {}
+}
