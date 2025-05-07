@@ -1,67 +1,15 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { slideData } from "@/data/slideData";
 import "swiper/css"; // 기본 스타일
 import "swiper/css/navigation"; // 사용하면 navigation 버튼용
 import "swiper/css/pagination"; // 페이지네이션 동그라미용
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import styles from "../styles/ProductGallery.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-
-type SlideData = {
-  id: string;
-  title: string;
-  desc: string;
-  image: string;
-  link: string;
-};
-
-const slideData: SlideData[] = [
-  {
-    id: "slide01",
-    title: "01번 봉투",
-    desc: "투명도가 다른 유백색, 청색, 검정색 세 가지 색상으로 취향에 맞게 선택 가능하고 대, 중, 소 사이즈로 나뉘어 있으며, 끈으로 묶여 있어 협소한 장소에서도 편하게 사용 가능합니다. 하단부가 일자로 재단되어 재활용품, 쓰레기 봉투, 의류 등 물품 보관에 적합합니다.",
-    image: "/productGallery(1).jpg",
-    link: "/product/01",
-  },
-  {
-    id: "slide02",
-    title: "02번 봉투",
-    desc: "투명도가 다른 유백색, 청색, 검정색 세 가지 색상으로 취향에 맞게 선택 가능하고 대, 중, 소 사이즈로 나뉘어 있으며, 끈으로 묶여 있어 협소한 장소에서도 편하게 사용 가능합니다. 하단부가 일자로 재단되어 재활용품, 쓰레기 봉투, 의류 등 물품 보관에 적합합니다.",
-    image: "/productGallery(2).jpg",
-    link: "/product/01",
-  },
-  {
-    id: "slide03",
-    title: "03번 봉투",
-    desc: "투명도가 다른 유백색, 청색, 검정색 세 가지 색상으로 취향에 맞게 선택 가능하고 대, 중, 소 사이즈로 나뉘어 있으며, 끈으로 묶여 있어 협소한 장소에서도 편하게 사용 가능합니다. 하단부가 일자로 재단되어 재활용품, 쓰레기 봉투, 의류 등 물품 보관에 적합합니다.",
-    image: "/productGallery(3).jpg",
-    link: "/product/01",
-  },
-  {
-    id: "slide04",
-    title: "04번 봉투",
-    desc: "투명도가 다른 유백색, 청색, 검정색 세 가지 색상으로 취향에 맞게 선택 가능하고 대, 중, 소 사이즈로 나뉘어 있으며, 끈으로 묶여 있어 협소한 장소에서도 편하게 사용 가능합니다. 하단부가 일자로 재단되어 재활용품, 쓰레기 봉투, 의류 등 물품 보관에 적합합니다.",
-    image: "/productGallery(4).jpg",
-    link: "/product/01",
-  },
-  {
-    id: "slide05",
-    title: "05번 봉투",
-    desc: "투명도가 다른 유백색, 청색, 검정색 세 가지 색상으로 취향에 맞게 선택 가능하고 대, 중, 소 사이즈로 나뉘어 있으며, 끈으로 묶여 있어 협소한 장소에서도 편하게 사용 가능합니다. 하단부가 일자로 재단되어 재활용품, 쓰레기 봉투, 의류 등 물품 보관에 적합합니다.",
-    image: "/productGallery(5).jpg",
-    link: "/product/01",
-  },
-  {
-    id: "slide06",
-    title: "06번 봉투",
-    desc: "투명도가 다른 유백색, 청색, 검정색 세 가지 색상으로 취향에 맞게 선택 가능하고 대, 중, 소 사이즈로 나뉘어 있으며, 끈으로 묶여 있어 협소한 장소에서도 편하게 사용 가능합니다. 하단부가 일자로 재단되어 재활용품, 쓰레기 봉투, 의류 등 물품 보관에 적합합니다.",
-    image: "/productGallery(6).jpg",
-    link: "/product/01",
-  },
-];
+import styles from "../styles/ProductGallery.module.scss";
 
 export default function ProductGallery() {
   return (
@@ -90,6 +38,7 @@ export default function ProductGallery() {
               <div className={styles.textInfo}>
                 <h3>{slide.title}</h3>
                 <p>{slide.desc}</p>
+                {/* <p dangerouslySetInnerHTML={{ __html: slide.desc }} /> */}
               </div>
 
               <button type="button" className={styles.linkButton}>

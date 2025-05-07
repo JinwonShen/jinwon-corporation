@@ -1,5 +1,6 @@
 "use client";
 
+import { certs, partnerLogos } from "@/data/aboutData";
 import { useEffect, useState } from "react";
 import {
   FaRegBuilding,
@@ -8,20 +9,8 @@ import {
   FaRegRectangleList,
 } from "react-icons/fa6";
 import { CustomOverlayMap, Map as KakaoMap, MapMarker } from "react-kakao-maps-sdk";
+
 import styles from "./page.module.scss";
-
-const partnerLogos = [
-  { id: "logos1", src: "partner(1).png" },
-  { id: "logos2", src: "partner(4).jpg" },
-  { id: "logos3", src: "partner(3).png" },
-  { id: "logos4", src: "partner(2).png" },
-  { id: "logos5", src: "partner(5).png" },
-];
-
-const certs = [
-  { id: "cert1", src: "cert(1).png" },
-  { id: "cert2", src: "cert(2).png" },
-];
 
 export default function AboutPage() {
   const [isLoaded, setIsLoaded] = useState(false);

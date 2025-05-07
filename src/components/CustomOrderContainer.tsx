@@ -1,18 +1,11 @@
 "use client";
 
-import styles from "../styles/CustomOrderContainer.module.scss";
+import { imagePaths } from "@/data/customOrderData";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-const imagePaths = [
-  "/customOrderImg(1).png",
-  "/customOrderImg(2).png",
-  "/customOrderImg(3).png",
-  "/customOrderImg(4).png",
-  "/customOrderImg(5).png",
-  "/customOrderImg(6).png",
-];
+import styles from "../styles/CustomOrderContainer.module.scss";
 
 export default function CustomOrderContainer() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
