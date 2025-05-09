@@ -42,9 +42,9 @@ export default function Header() {
         className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        <span>{""}</span>
-        <span>{""}</span>
-        <span>{""}</span>
+        <span className={`${styles.hamburgerLine} ${styles.firstLine}`}>{""}</span>
+        <span className={`${styles.hamburgerLine} ${styles.secondLine}`}>{""}</span>
+        <span className={`${styles.hamburgerLine} ${styles.thirdLine}`}>{""}</span>
       </button>
 
       {/* 모바일 메뉴 (열렸을 때만) */}

@@ -20,7 +20,7 @@
     color: #fff;
   }
 
-  nav {
+  .pcMenu {
     display: flex;
     align-items: center;
 
@@ -70,9 +70,9 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 15;
+    z-index: 15 !important;
     
-    span {
+    .hamburgerLine {
       display: block;
       height: 2px;
       background: #ffffff;
@@ -82,15 +82,15 @@
   }
   
   .open {
-    span:nth-child(1) {
+    .firstLine {
       transform: rotate(45deg) translate(5px, 5px);
     }
   
-    span:nth-child(2) {
+    .secondLine {
       opacity: 0;
     }
   
-    span:nth-child(3) {
+    .thirdLine {
       transform: rotate(-45deg) translate(5px, -5px);
     }
   }
@@ -192,12 +192,12 @@
 
 @media (max-width: $breakpoint-mobile) {
   .header {
-    nav {
+    .pcMenu {
       display: none;
     }
 
     .hamburger {
-      display: flex;
+      display: flex !important;
     }
   }
 }
