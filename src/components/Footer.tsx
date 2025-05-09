@@ -13,7 +13,7 @@ export default function Footer() {
                 <a href="/about">회사소개</a>
               </li>
               <li>
-                <a href="/contact">제품소개</a>
+                <a href="/products">제품소개</a>
               </li>
               <li>
                 <a href="/contact">문의하기</a>

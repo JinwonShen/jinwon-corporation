@@ -25,12 +25,14 @@
           font-family: $font-body;
           font-size: $font-size-xl;
           color: #fff;
+          word-break: keep-all;
         }
       
         h1 {
           font-family: $font-title;
           font-size: $font-size-3xl;
           color: #fff;
+          word-break: keep-all;
         }
       }
     

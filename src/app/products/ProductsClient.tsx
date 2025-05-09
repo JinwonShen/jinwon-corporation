@@ -1,4 +1,3 @@
-// src/app/products/ProductsClient.tsx
 "use client";
 
 import { categories, categoryDescriptions, categoryMap } from "@/data/productCategories";
@@ -25,7 +24,7 @@ export default function ProductsClient() {
       <div className={styles.titleContainer}>
         <h1>제품소개</h1>
         <div className={styles.imgBox}>
-          <img src="/product-title-image.png" alt="product Image" />
+          <img src="/product-title-image.png" alt="productImage" />
         </div>
       </div>
 
