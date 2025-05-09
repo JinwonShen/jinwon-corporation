@@ -36,7 +36,7 @@ export default function ProductGallery() {
             <div className={styles.text}>
               <div className={styles.textInfo}>
                 <h3>{slide.title}</h3>
-                <p>{slide.desc}</p>
+                <div>{slide.desc}</div>
               </div>
               <button type="button" className={styles.linkButton}>
                 <Link href={`/products?category=${encodeURIComponent(slide.categoryId)}`}>

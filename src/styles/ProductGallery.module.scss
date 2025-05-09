@@ -37,12 +37,13 @@
           h3 {
             font-size: $font-size-xl;
           }
-          p {
+          
+          div {
             margin: 1rem 2.4rem 0 0;
             font-size: $font-size-base;
             line-height: 2.8rem;
 
-            p {
+            span {
               font-size: $font-size-sm;
               line-height: 2.4rem;
             }

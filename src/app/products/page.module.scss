@@ -122,7 +122,8 @@
     border: 1px solid $color-light-gray;
     background-color: $color-light-gray-bg;
 
-    p {
+    div {
+      display: inline;
       font-size: $font-size-sm;
       line-height: 2.8rem;
     }
@@ -155,7 +156,8 @@
           transition: all 0.3s;
         }
 
-        p {
+        div {
+          display: inline;
           font-size: $font-size-sm;
         }
 

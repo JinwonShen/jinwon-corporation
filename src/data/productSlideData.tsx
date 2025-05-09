@@ -30,13 +30,13 @@ export const productSlideData: ProductSlideData[] = [
         다음과 같은 사이즈로 구분됩니다.
         <br />
         <br />
-        <p>
+        <span>
           검정색 쓰레기 봉투
           <br />
           10L / 20L / 50L / 80L / 100L <br />
           반투명 재활용 봉투 <br />
           10L / 20L / 50L / 80L / 100L
-        </p>
+        </span>
       </>
     ),
     image: "/productGallery(2).png",

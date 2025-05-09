@@ -52,7 +52,7 @@ export default function ProductsPage() {
       </nav>
 
       <div className={styles.categoryInfo}>
-        <p className={styles.categoryDescription}>{categoryDescriptions[selectedCategory]}</p>
+        <div className={styles.categoryDescription}>{categoryDescriptions[selectedCategory]}</div>
       </div>
 
       <article className={styles.productList}>
@@ -61,7 +61,7 @@ export default function ProductsPage() {
             <li key={product.id} className={styles.productCard}>
               <img src={product.thumbnail} alt={product.title} />
               <h3>{product.title}</h3>
-              <p>{product.description}</p>
+              <div>{product.description}</div>
             </li>
           ))}
         </ul>
