@@ -8,7 +8,7 @@ import styles from "../styles/Header.module.scss";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -16,13 +16,10 @@ export default function Header() {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize();
+    handleResize(); // 초기값 설정
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  if (isMobile === null) return null;
 
   const isSubPage = pathname !== "/"; // 메인페이지가 아닐경우 ?
   const headerClass = isSubPage ? `${styles.header} ${styles.subHeader}` : styles.header;
