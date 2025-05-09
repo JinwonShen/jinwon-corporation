@@ -1,5 +1,6 @@
 "use client";
 
+import { mainSlideData } from "@/data/mainSlideData";
 import { motion } from "framer-motion";
 import "swiper/css"; // 기본 스타일
 import "swiper/css/navigation"; // 사용하면 navigation 버튼용
@@ -10,34 +11,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "../styles/SwiperContainer.module.scss";
-
-type SlideData = {
-  id: string;
-  title: string;
-  subTitle: string;
-  image: string;
-};
-
-const slideData: SlideData[] = [
-  {
-    id: "slide01",
-    title: "정직과 신뢰로 만들어낸 품질",
-    subTitle: "가공 경력 23년,",
-    image: "/jinwon(1).jpeg",
-  },
-  {
-    id: "slide02",
-    title: "믿고 맡길 수 있는 파트너",
-    subTitle: "맞춤 제작부터 대량 생산까지",
-    image: "/jinwon(2).jpeg",
-  },
-  {
-    id: "slide03",
-    title: "믿을 수 있는 품질, 정확한 납기",
-    subTitle: "합리적인 가격",
-    image: "/jinwon(3).jpeg",
-  },
-];
 
 export default function SwiperContainer() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -58,7 +31,7 @@ export default function SwiperContainer() {
         speed={1000}
         loop={true}
       >
-        {slideData.map((slide, i) => {
+        {mainSlideData.map((slide, i) => {
           return (
             <SwiperSlide key={slide.id} className={styles.swiperSlide}>
               <motion.div

@@ -77,7 +77,7 @@ export default function ContactPage() {
       <div className={styles.titleContainer}>
         <h1>견적 상세문의</h1>
         <div className={styles.imgBox}>
-          <img src="/about-title-image.png" alt="진원상사 소개 이미지" />
+          <img src="/contact-title-image.png" alt="진원상사 소개 이미지" />
         </div>
       </div>
 

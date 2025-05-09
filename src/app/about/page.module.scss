@@ -49,6 +49,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: 0 60%;
       }
 
       &::after {
@@ -227,61 +228,73 @@
 }
 
 @media (max-width: $breakpoint-tablet) {
-  .greeting {
-    .greetingTitle {
-      padding-right: 50%;
+  .aboutContainer {
+    .titleContainer {
+      height: 250px !important;
     }
 
-    .greetingText {
-      padding-left: 30% !important;
-    }
-  }
-
-  .certificates {
-    ul {
-      grid-template-columns: repeat(3, 1fr) !important;
-    }
-  }
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .greeting {
-    .greetingTitle, .greetingText {
-      padding: 0 !important;
-    }
-  }
-
-  .overview {
-    ul {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 4.8rem;
+    .greeting {
+      .greetingTitle {
+        padding-right: 50%;
+      }
   
-      li {
-        align-content: center;
-        height: auto;
-        border: 1px solid $color-light-gray;
-        border-radius: 4px;
-        padding: 4rem;
-        
-        .icon {
-          color: $color-primary;
-        }
+      .greetingText {
+        padding-left: 30% !important;
+      }
+    }
   
-        & p:nth-child(2) {
-          font-weight: 700;
-          margin-top: 1.6rem;
-          // color: $color-primary;
-        }
-        & p:nth-child(3) {
-          font-size: $font-size-base;
-        }
+    .certificates {
+      ul {
+        grid-template-columns: repeat(3, 1fr) !important;
       }
     }
   }
 
-  .certificates {
-    ul {
-      grid-template-columns: repeat(2, 1fr) !important;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .aboutContainer {
+    .titleContainer {
+      height: 200px !important;
+    }
+
+    .greeting {
+      .greetingTitle, .greetingText {
+        padding: 0 !important;
+      }
+    }
+  
+    .overview {
+      ul {
+        grid-template-columns: repeat(2, 1fr) !important;
+    
+        li {
+          align-content: center;
+          height: auto;
+          border: 1px solid $color-light-gray;
+          border-radius: 4px;
+          padding: 4rem;
+          
+          .icon {
+            color: $color-primary;
+          }
+    
+          & p:nth-child(2) {
+            font-weight: 700;
+            margin-top: 1.6rem;
+            // color: $color-primary;
+          }
+          & p:nth-child(3) {
+            font-size: $font-size-base;
+          }
+        }
+      }
+    }
+  
+    .certificates {
+      ul {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
     }
   }
 }

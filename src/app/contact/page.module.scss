@@ -12,10 +12,12 @@
     position: relative;
     width: 100%;
     height: 300px;
+
     h1 {
       position: absolute;
       top: 50%;
       left: 50%;
+      word-break: keep-all;
       transform: translate(-50%, -50%);
       text-align: center;
       font-size: $font-size-3xl;
@@ -32,6 +34,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: 0 80%;
       }
 
       &::after {
@@ -292,25 +295,39 @@
   }
 }
 
+@media (max-width: breakpoint-tablet) {
+  .contactContainer {
+    .titleContainer {
+      height: 250px !important;
+    }
+  }
+}
+
 @media (max-width: $breakpoint-mobile) {
-  .form {
-    fieldset {
-      flex-direction: column !important;
-  
-      label {
-        width: 100% !important;
-        display: flex;
-        justify-content: space-between;
-  
-        select {
-          width: 100%;
-        }
-      }        
+  .contactContainer {
+    .titleContainer {
+      height: 200px !important;
     }
 
-    .contactContent {
-      .contact, .agree {
-        width: 100% !important;
+    .form {
+      fieldset {
+        flex-direction: column !important;
+    
+        label {
+          width: 100% !important;
+          display: flex;
+          justify-content: space-between;
+    
+          select {
+            width: 100%;
+          }
+        }        
+      }
+  
+      .contactContent {
+        .contact, .agree {
+          width: 100% !important;
+        }
       }
     }
   }

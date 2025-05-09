@@ -28,10 +28,12 @@
         flex-direction: column;
         justify-content: space-between;
         width: 50%;
-        height: 100%;
+        min-height: 375px;
         padding: 12px;
 
         .textInfo {
+          width: 100%;
+          
           h3 {
             font-size: $font-size-xl;
           }
@@ -181,6 +183,7 @@
   
         .text {
           width: 100%;
+          min-height: 384px;
 
           .linkButton {
             margin-top: 24px;
@@ -190,6 +193,7 @@
 
       .imageWrap {
         width: 100% !important;
+        aspect-ratio: 1 / 1;
       }
     }
   }

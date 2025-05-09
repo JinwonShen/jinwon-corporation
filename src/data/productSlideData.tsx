@@ -1,12 +1,13 @@
-type SlideData = {
+type ProductSlideData = {
   id: string;
   title: string;
   desc: React.ReactNode;
   image: string;
   link: string;
+  categoryId: string;
 };
 
-export const slideData: SlideData[] = [
+export const productSlideData: ProductSlideData[] = [
   {
     id: "slide01",
     title: "손잡이 봉투",
@@ -17,7 +18,8 @@ export const slideData: SlideData[] = [
       </>
     ),
     image: "/productGallery(1).png",
-    link: "/product/01",
+    link: "/products?category=handle-bag",
+    categoryId: "handle-bag",
   },
   {
     id: "slide02",
@@ -38,7 +40,8 @@ export const slideData: SlideData[] = [
       </>
     ),
     image: "/productGallery(2).png",
-    link: "/product/01",
+    link: "/products?category=trash-bag",
+    categoryId: "trash-bag",
   },
   {
     id: "slide03",
@@ -51,7 +54,8 @@ export const slideData: SlideData[] = [
       </>
     ),
     image: "/productGallery(3).png",
-    link: "/product/01",
+    link: "/products?category=food-packaging-bag",
+    categoryId: "food-packaging-bag",
   },
   {
     id: "slide04",
@@ -63,7 +67,8 @@ export const slideData: SlideData[] = [
       </>
     ),
     image: "/productGallery(4).png",
-    link: "/product/01",
+    link: "/products?category=delivery-bag",
+    categoryId: "delivery-bag",
   },
   {
     id: "slide05",
@@ -75,7 +80,8 @@ export const slideData: SlideData[] = [
       </>
     ),
     image: "/productGallery(5).png",
-    link: "/product/01",
+    link: "/products?category=industrial-bag",
+    categoryId: "industrial-bag",
   },
   {
     id: "slide06",
@@ -87,6 +93,7 @@ export const slideData: SlideData[] = [
       </>
     ),
     image: "/productGallery(6).png",
-    link: "/product/01",
+    link: "/products?category=others",
+    categoryId: "others",
   },
 ];

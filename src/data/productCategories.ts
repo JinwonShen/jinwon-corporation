@@ -1,11 +1,14 @@
-export const categories = [
-  "손잡이 봉투",
-  "쓰레기 봉투",
-  "시장/배달용 봉투",
-  "식품 포장용 봉투",
-  "공업용 봉투",
-  "기타 부자재",
-];
+export const categoryMap: Record<string, string> = {
+  "handle-bag": "손잡이 봉투",
+  "trash-bag": "쓰레기 봉투",
+  "food-packaging-bag": "시장/배달용 봉투",
+  "delivery-bag": "식품 포장용 봉투",
+  "industrial-bag": "공업용 봉투",
+  others: "기타 부자재",
+};
+
+// 한글 이름 배열 (탭 표시용)
+export const categories = Object.values(categoryMap);
 
 export const categoryDescriptions: Record<string, string> = {
   "손잡이 봉투":

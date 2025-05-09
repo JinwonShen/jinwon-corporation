@@ -78,37 +78,39 @@
       padding: 0 1rem 2rem;
 
       li {
-        position: relative;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s;
-        color: $color-gray;
-        font-weight: 600;
-        cursor: pointer;
-
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 6px;
-          height: 6px;
-          background-color: transparent;
-          border-radius: 50%;
-          transition: background-color 0.3s ease;
-        }
-    
-        &.active::after {
-          background-color: $color-primary; // 또는 원하는 색상
-        }
-
-        &:hover {
-          color: $color-black;
-        }
-    
-        &.active {
-          color: $color-black;
+        button {
+          position: relative;
+          padding-bottom: 0.5rem;
+          border-bottom: 2px solid transparent;
+          transition: all 0.3s;
+          color: $color-gray;
+          font-weight: 600;
+          cursor: pointer;
+  
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+          }
+      
+          &.active::after {
+            background-color: $color-primary; // 또는 원하는 색상
+          }
+  
+          &:hover {
+            color: $color-black;
+          }
+      
+          &.active {
+            color: $color-black;
+          }
         }
       }
     }
@@ -178,6 +180,12 @@
 }
 
 @media (max-width: $breakpoint-tablet) {
+  .productContainer {
+    .titleContainer {
+      height: 250px !important;
+    }
+  }
+
   .productList {
     ul {
       grid-template-columns: repeat(3, 1fr) !important;
@@ -186,9 +194,15 @@
 }
 
 @media (max-width: $breakpoint-mobile) {
-  .productList {
-    ul {
-      grid-template-columns: repeat(2, 1fr) !important;
+  .productContainer {
+    .titleContainer {
+      height: 200px !important;
+    }
+    
+    .productList {
+      ul {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
     }
   }
 }

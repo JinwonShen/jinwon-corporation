@@ -1,12 +1,23 @@
 "use client";
 
-import { categories, categoryDescriptions } from "@/data/productCategories";
+import { categories, categoryDescriptions, categoryMap } from "@/data/productCategories";
 import { productData } from "@/data/products";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
 
 export default function ProductsPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>(categories[0]);
+  const searchParams = useSearchParams();
+  const categorySlug = searchParams.get("category");
+
+  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+
+  useEffect(() => {
+    if (categorySlug && categoryMap[categorySlug]) {
+      setSelectedCategory(categoryMap[categorySlug]);
+    }
+  }, [categorySlug]);
+
   const products = productData[selectedCategory] || [];
 
   return (
@@ -14,24 +25,27 @@ export default function ProductsPage() {
       <div className={styles.titleContainer}>
         <h1>제품소개</h1>
         <div className={styles.imgBox}>
-          <img src="/about-title-image.png" alt="product Image" />
+          <img src="/product-title-image.png" alt="product Image" />
         </div>
       </div>
 
       <nav>
         <ul>
           {categories.map((category) => (
-            <li
-              key={category}
-              className={selectedCategory === category ? styles.active : ""}
-              onClick={() => setSelectedCategory(category)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  setSelectedCategory(category);
-                }
-              }}
-            >
-              {category}
+            <li key={category}>
+              <button
+                type="button"
+                className={selectedCategory === category ? styles.active : ""}
+                onClick={() => setSelectedCategory(category)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    setSelectedCategory(category);
+                  }
+                }}
+                tabIndex={0}
+              >
+                {category}
+              </button>
             </li>
           ))}
         </ul>

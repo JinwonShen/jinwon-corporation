@@ -1,0 +1,68 @@
+@use '../../styles/variables' as *;
+
+.storeContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  height: calc(100vh - 209px);
+  margin: 0 auto;
+  padding-top: 100px;
+
+  .textContainer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+
+    .hidden {
+      display: none;
+    }
+
+    h2 {
+      font-family: $font-title;
+      font-weight: 500;
+      font-size: $font-size-xl;
+      text-align: center;
+      color: $color-primary;
+      margin-bottom: 1.6rem
+    }
+
+    p {
+      margin-top: 2.4rem;
+      text-align: center;
+      word-break: keep-all;
+
+      span {
+        font-weight: 700;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-pc) {
+  .storeContainer {
+    height: calc(100vh - 307px);
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .storeContainer {
+    height: calc(100vh - 292px);
+    .textContainer {
+      padding: 0 2.4rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile-sm) {
+  .storeContainer {
+    height: calc(100vh - 332px);
+
+    .textContainer {
+      .hidden {
+        display: block;
+      }
+    }
+  }
+}

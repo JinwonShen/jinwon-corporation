@@ -1,7 +1,7 @@
 "use client";
 
 import { imagePaths } from "@/data/customOrderData";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -12,24 +12,24 @@ export default function CustomOrderContainer() {
 
   return (
     <article className={styles.customOrderContainer}>
-      <motion.div
+      <div
         className={styles.textContainer}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.1 }}
+        // initial={{ opacity: 0, y: 40 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.6, ease: "easeOut" }}
+        // viewport={{ once: true, amount: 0.1 }}
       >
         <h2>
           맞춤<span>/</span>주문제작 전문
         </h2>
         <span>다양한 제작 사례를 확인해보세요.</span>
-      </motion.div>
-      <motion.div
+      </div>
+      <div
         className={styles.imgContainer}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.1 }}
+        // initial={{ opacity: 0, y: 40 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{ duration: 0.6, ease: "easeOut" }}
+        // viewport={{ once: true, amount: 0.1 }}
       >
         {imagePaths.map((path, index) => (
           <div
@@ -51,7 +51,7 @@ export default function CustomOrderContainer() {
             />
           </div>
         ))}
-      </motion.div>
+      </div>
 
       <dialog
         className={`${styles.modal} ${selectedImage ? styles.active : ""}`}

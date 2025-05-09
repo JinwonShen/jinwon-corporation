@@ -1,9 +1,9 @@
 "use client";
 
-import { slideData } from "@/data/slideData";
-import "swiper/css"; // 기본 스타일
-import "swiper/css/navigation"; // 사용하면 navigation 버튼용
-import "swiper/css/pagination"; // 페이지네이션 동그라미용
+import { productSlideData } from "@/data/productSlideData";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -17,11 +17,10 @@ export default function ProductGallery() {
       <h2>제품 미리보기</h2>
       <Swiper
         modules={[Pagination, Autoplay]}
-        // spaceBetween={24} // 슬라이드 사이 간격
-        slidesPerView={1} // 화면에 슬라이드 3개 중 1.3개만 보이게
-        centeredSlides={true} // 중앙 정렬
-        loop={true} // 무한 루프
-        slideToClickedSlide={true} // 클릭 시 슬라이드 이동
+        slidesPerView={1}
+        centeredSlides={true}
+        loop={true}
+        slideToClickedSlide={true}
         speed={600}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         pagination={{
@@ -32,17 +31,17 @@ export default function ProductGallery() {
         }}
         className={styles.swiper}
       >
-        {slideData.map((slide) => (
+        {productSlideData.map((slide) => (
           <SwiperSlide key={slide.id} className={styles.swiperSlide}>
             <div className={styles.text}>
               <div className={styles.textInfo}>
                 <h3>{slide.title}</h3>
                 <p>{slide.desc}</p>
-                {/* <p dangerouslySetInnerHTML={{ __html: slide.desc }} /> */}
               </div>
-
               <button type="button" className={styles.linkButton}>
-                <Link href={`${slide.link}`}>제품 바로가기</Link>
+                <Link href={`/products?category=${encodeURIComponent(slide.categoryId)}`}>
+                  제품 바로가기
+                </Link>
               </button>
             </div>
             <div className={styles.imageWrap}>
