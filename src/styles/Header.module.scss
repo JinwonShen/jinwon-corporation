@@ -191,11 +191,13 @@
 }
 
 @media (max-width: $breakpoint-mobile) {
-  .hamburger {
-    display: flex !important;
-  }
-
-  .pcMenu {
-    display: none;
+  .header {
+    .hamburger {
+      display: flex !important;
+    }
+  
+    .pcMenu {
+      display: none;
+    }
   }
 }
