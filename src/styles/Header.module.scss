@@ -1,4 +1,4 @@
-@use '_variables' as *;
+@use '../styles/variables' as *;
 
 .header {
   position: absolute;
@@ -70,7 +70,7 @@
     // background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 20 !important;
+    z-index: 100000 !important;
     
     .hamburgerLine {
       display: block;
