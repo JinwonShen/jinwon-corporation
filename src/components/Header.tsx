@@ -1,14 +1,28 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Link from "next/link";
 import styles from "../styles/Header.module.scss";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  if (isMobile === null) return null;
 
   const isSubPage = pathname !== "/"; // 메인페이지가 아닐경우 ?
   const headerClass = isSubPage ? `${styles.header} ${styles.subHeader}` : styles.header;
@@ -37,15 +51,17 @@ export default function Header() {
       </nav>
 
       {/* 햄버거 버튼 (모바일용) */}
-      <button
-        type="button"
-        className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <span className={`${styles.hamburgerLine} ${styles.firstLine}`}>{""}</span>
-        <span className={`${styles.hamburgerLine} ${styles.secondLine}`}>{""}</span>
-        <span className={`${styles.hamburgerLine} ${styles.thirdLine}`}>{""}</span>
-      </button>
+      {isMobile && (
+        <button
+          type="button"
+          className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span className={`${styles.hamburgerLine} ${styles.firstLine}`} />
+          <span className={`${styles.hamburgerLine} ${styles.secondLine}`} />
+          <span className={`${styles.hamburgerLine} ${styles.thirdLine}`} />
+        </button>
+      )}
 
       {/* 모바일 메뉴 (열렸을 때만) */}
       {menuOpen && (
