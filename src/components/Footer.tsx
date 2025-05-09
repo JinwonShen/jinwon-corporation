@@ -1,25 +1,28 @@
+import Link from "next/link";
 import styles from "../styles/Footer.module.scss";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
-        <h2>진원상사</h2>
+        <h2>
+          <Link href={"/"}>진원상사</Link>
+        </h2>
 
         <div className={styles.footerContents}>
           <nav aria-label="푸터 링크">
             <ul>
               <li>
-                <a href="/about">회사소개</a>
+                <Link href={"/about"}>회사소개</Link>
               </li>
               <li>
-                <a href="/products">제품소개</a>
+                <Link href={"/products"}>제품소개</Link>
               </li>
               <li>
-                <a href="/contact">문의하기</a>
+                <Link href={"/contact"}>견적문의</Link>
               </li>
               <li>
-                <a href="/contact">스토어 바로가기</a>
+                <Link href={"/smartStore"}>스토어 바로가기</Link>
               </li>
             </ul>
           </nav>

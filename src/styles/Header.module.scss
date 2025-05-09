@@ -192,12 +192,11 @@
 
 @media (max-width: $breakpoint-mobile) {
   .header {
-
-    > nav {
+    nav {
       display: none;
     }
 
-    .hamburger {
+    button {
       display: flex;
     }
   }
