@@ -10,7 +10,6 @@ import styles from "./page.module.scss";
 export default function ProductsClient() {
   const searchParams = useSearchParams();
   const categorySlug = searchParams.get("category");
-
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   useEffect(() => {
@@ -38,12 +37,6 @@ export default function ProductsClient() {
                 type="button"
                 className={selectedCategory === category ? styles.active : ""}
                 onClick={() => setSelectedCategory(category)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    setSelectedCategory(category);
-                  }
-                }}
-                tabIndex={0}
               >
                 {category}
               </button>
