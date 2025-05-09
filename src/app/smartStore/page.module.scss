@@ -27,14 +27,16 @@
       margin-bottom: 1.6rem
     }
 
-    p {
-      margin-top: 2.4rem;
-      text-align: center;
-      word-break: keep-all;
-
-      span {
-        font-weight: 700;
-        color: $color-primary;
+    div {
+      p {
+        margin-top: 2.4rem;
+        text-align: center;
+        word-break: keep-all;
+  
+        span {
+          font-weight: 700;
+          color: $color-primary;
+        }
       }
     }
   }
