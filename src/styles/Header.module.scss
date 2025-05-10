@@ -162,10 +162,16 @@
         li {
           a {
             color: #333;
+
+            &:hover {
+              color: $color-primary;
+            }
           }
 
           &:last-child {
             a {
+              color: $color-primary;
+              
               &:hover {
                 color: #333;
               }
