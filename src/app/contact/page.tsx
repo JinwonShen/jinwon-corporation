@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { uploadFile } from "../lib/uploadFile";
 
+import Image from "next/image";
 import styles from "./page.module.scss";
 
 export default function ContactPage() {
@@ -77,7 +78,14 @@ export default function ContactPage() {
       <div className={styles.titleContainer}>
         <h1>견적 상세문의</h1>
         <div className={styles.imgBox}>
-          <img src="/contact-title-image.jpeg" alt="진원상사 소개 이미지" />
+          {/* <img src="/contact-title-image.jpeg" alt="진원상사 소개 이미지" /> */}
+          <Image
+            src={"/contact-title-image.jpeg"}
+            alt="진원상사 견적문의 타이틀 이미지"
+            width={1080}
+            height={300}
+            priority
+          />
         </div>
       </div>
 

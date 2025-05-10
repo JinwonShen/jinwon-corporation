@@ -1,6 +1,7 @@
 "use client";
 
 import { certs, partnerLogos } from "@/data/aboutData";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
   FaRegBuilding,
@@ -9,7 +10,6 @@ import {
   FaRegRectangleList,
 } from "react-icons/fa6";
 import { CustomOverlayMap, Map as KakaoMap, MapMarker } from "react-kakao-maps-sdk";
-
 import styles from "./page.module.scss";
 
 export default function AboutPage() {
@@ -38,7 +38,14 @@ export default function AboutPage() {
       <div className={styles.titleContainer}>
         <h1>진원상사</h1>
         <div className={styles.imgBox}>
-          <img src="/about-title-image.jpeg" alt="진원상사 소개 이미지" />
+          {/* <img src="/about-title-image.jpeg" alt="진원상사 소개 이미지" /> */}
+          <Image
+            src="/about-title-image.jpeg"
+            alt="진원상사 소개 타이틀 이미지"
+            width={1080}
+            height={300}
+            priority
+          />
         </div>
       </div>
 
@@ -86,7 +93,8 @@ export default function AboutPage() {
         <ul>
           {[...partnerLogos, ...partnerLogos].map(({ id, src }, idx) => (
             <li key={`${id} - ${idx}`} className={styles.slide}>
-              <img src={src} alt={`파트너 ${id}`} />
+              {/* <img src={src} alt={`파트너 ${id}`} /> */}
+              <Image src={src} alt={`파트너 ${id}`} width={150} height={40} />
             </li>
           ))}
         </ul>
@@ -97,11 +105,11 @@ export default function AboutPage() {
         <ul>
           {[...certs].map(({ id, src }) => (
             <li key={id}>
-              <img src={src} alt={`인증서 ${id}`} />
+              {/* <img src={src} alt={`인증서 ${id}`} /> */}
+              <Image src={src} alt={`인중서 ${id}`} width={275} height={388} placeholder="blur" />
             </li>
           ))}
         </ul>
-        <div className={styles.certImages}>{/* 추후 인증서 이미지 추가 */}</div>
       </article>
 
       <article className={styles.location}>

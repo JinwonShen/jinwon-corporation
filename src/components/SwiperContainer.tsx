@@ -51,6 +51,7 @@ export default function SwiperContainer() {
                   width={600}
                   height={400}
                   className={styles.img}
+                  priority
                 />
               </div>
             </SwiperSlide>
