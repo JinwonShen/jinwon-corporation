@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "@/styles/globals.scss";
+import type { Metadata } from "next";
+import useSmoothScroll from "./hooks/useSmoothScroll";
 
 export const metadata: Metadata = {
   title: "진원상사",
@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  useSmoothScroll();
+
   return (
     <html lang="ko">
       <head>
