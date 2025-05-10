@@ -1,10 +1,6 @@
-"use client";
-
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import "@/styles/globals.scss";
 import type { Metadata } from "next";
-import useSmoothScroll from "./hooks/useSmoothScroll";
+import AppShell from "./AppShell"; // ✅ 클라이언트 래퍼 추가
 
 export const metadata: Metadata = {
   title: "진원상사",
@@ -12,13 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  useSmoothScroll();
-
   return (
     <html lang="ko">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* crossOrigin="anonymous" ???? */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -27,9 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
