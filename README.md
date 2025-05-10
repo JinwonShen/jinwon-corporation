@@ -180,7 +180,7 @@ emailjs.sendForm(
 
 ---
 
-## ✨ 최신 추가: 건너뛰기 방식 복합
+## ✨ 최신 추가: 기능 확장 및 배포 후 점검 항목
 
 ### 6. "제품 바로가기" 클릭 시 products 페이지의 해당 카테고리 탭이 자동으로 선택되게 하기
 
@@ -188,8 +188,6 @@ emailjs.sendForm(
 * `productCategories.ts` 에서 slug 값과 한국 카테고리 상태 매칭 (`categoryMap`)
 * `products/page.tsx`에서 `useSearchParams` 를 통해 참조 값을 가져와 `useEffect` 로 `selectedCategory` 값 갱신
 * Tab UI, List UI는 기존과 동일하게 유지
-
-### ✅ 필요 파일
 
 ```ts
 // productCategories.ts
@@ -202,3 +200,31 @@ export const categoryMap: Record<string, string> = {
   "others": "기타 부자재",
 };
 ```
+
+### 7. SEO 및 웹 표준 강화
+
+* 모든 `<img>`를 Next.js의 `<Image>` 컴포넌트로 교체 → LCP 최적화 및 lazy loading 적용
+* 페이지별 `metadata` 설정으로 title, description, og\:image 등 구성
+* `robots.txt`, `sitemap.xml` 자동 생성 고려
+* 의미 있는 heading(H1\~H3 등) 계층 구조로 페이지 구성
+
+### 8. 커스텀 도메인 연결
+
+* Vercel → 프로젝트 → Settings → Domains 에서 연결 가능
+* DNS 레코드가 `A` 또는 `CNAME`으로 연결되어야 함
+
+### 9. 접근성 및 브라우저 호환성 점검
+
+* Lighthouse로 성능/접근성 점검 (특히 contrast, alt, label, landmark 등)
+* iOS Safari, Android Chrome, Edge 등에서 반응형 메뉴 동작 여부 확인
+
+### 10. 배포 후 운영 테스트 시나리오
+
+* 메인 → 제품 소개 → 카테고리 필터 → 제품 클릭
+* 메인 → 문의하기 → 파일 업로드 + 전송 테스트
+* 메인 → 지도 → 길찾기 확인
+* 메인 → 모바일 환경 진입 → 햄버거 메뉴 작동 여부
+
+---
+
+위 모든 체크리스트는 최종 릴리즈 전 점검용으로 사용하고, README.md에 주기적으로 업데이트함.
