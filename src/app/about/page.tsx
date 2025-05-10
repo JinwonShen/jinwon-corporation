@@ -38,7 +38,7 @@ export default function AboutPage() {
       <div className={styles.titleContainer}>
         <h1>진원상사</h1>
         <div className={styles.imgBox}>
-          <img src="/about-title-image(1).jpeg" alt="진원상사 소개 이미지" />
+          <img src="/about-title-image.jpeg" alt="진원상사 소개 이미지" />
         </div>
       </div>
 
