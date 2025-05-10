@@ -27,7 +27,7 @@ export default function ProductsClient() {
         <div className={styles.imgBox}>
           {/* <img src="/product-title-image.png" alt="productImage" /> */}
           <Image
-            src={"/product-title-image.jpeg"}
+            src={"/product-title-image.png"}
             alt="진원상사 제품소개 타이틀 이미지"
             width={1080}
             height={300}
