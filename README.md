@@ -78,7 +78,7 @@ npm install react-kakao-maps-sdk@2.1.3 --legacy-peer-deps
 카카오 맵 SDK는 로컬 및 배포 환경에서도 **도메인 등록**이 필요함:
 
 * 개발 중: `http://localhost:3000`
-* 배포 후: `https://your-vercel-url.vercel.app`, `https://yourdomain.com`
+* 배포 후: `https://your-vercel-url.vercel.app`, `https://jinwoncorporation.com (도메인 연결)`
 
 ### ✅ 안정적 렌더링 코드 예시
 

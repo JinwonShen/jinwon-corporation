@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="description" content="비닐 가공 23년, 정직과 신뢰로 만들어낸 품질" />
         <meta
           name="keywords"
-          content="진원상사, 비닐, 봉투, 포장재, 식품용 봉투, 공업용 봉투, 식품 포장, 김치봉투, 배달봉투, 주문제작"
+          content="진원상사,비닐,봉투,포장재,식품용 봉투,공업용 봉투,식품 포장,김치봉투,배달봉투,주문제작"
         />
         <meta name="author" content="진원상사" />
 
@@ -29,17 +29,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:site_name" content="진원상사" />
         <meta property="og:title" content="진원상사 - 비닐 가공 전문 제조업체" />
         <meta property="og:description" content="정직과 신뢰로 23년, 다양한 봉투 및 포장재 전문" />
-        <meta
-          property="og:image"
-          content="https://jinwon-corporation.vercel.app/Open-Graph-Basic.jpg"
-        />
-        <meta property="og:url" content="https://jinwon-corporation.vercel.app" />
+        <meta property="og:image" content="https://jinwoncorporation.com/Open-Graph-Basic.jpg" />
+        <meta property="og:url" content="https://jinwoncorporation.com" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="진원상사 - 비닐 가공 전문 제조업체" />
         <meta name="twitter:description" content="정직과 신뢰로 23년, 다양한 봉투 및 포장재 전문" />
-        <meta name="twitter:image" content="https://jinwon-corporation.vercel.app/OG-twitter.jpg" />
+        <meta name="twitter:image" content="https://jinwoncorporation.com/OG-twitter.jpg" />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
