@@ -9,4 +9,5 @@ export const partnerLogos = [
 export const certs = [
   { id: "cert1", src: "cert(1).png" },
   { id: "cert2", src: "cert(2).png" },
+  // { id: "cert3", src: "cert(3).png" },
 ];

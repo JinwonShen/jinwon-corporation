@@ -74,7 +74,7 @@ export default function AboutPage() {
           <li>
             <FaRegCalendar size={24} className={styles.icon} />
             <p>설립연도</p>
-            <p>2003년~</p>
+            <p>2002년~</p>
           </li>
           <li>
             <FaRegRectangleList size={24} className={styles.icon} />
