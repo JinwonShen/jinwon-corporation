@@ -76,16 +76,15 @@ npm install react-kakao-maps-sdk@2.1.3 --legacy-peer-deps
 ### 버전 이슈 및 해결 기록
 
 ✅ React 19 → 18 다운그레이드
-	•	react-kakao-maps-sdk가 React 19에서 최초 렌더링 시 지도가 나타나지 않는 문제 발생
-	•	해당 라이브러리가 아직 React 19를 완전히 지원하지 않기 때문으로 판단됨
-	•	해결을 위해 React를 18 버전으로 다운그레이드 (package.json 수정 후 npm install)
 
+* react-kakao-maps-sdk가 React 19에서 최초 렌더링 시 지도가 나타나지 않는 문제 발생
+* 해당 라이브러리가 아직 React 19를 완전히 지원하지 않기 때문으로 판단됨
+* 해결을 위해 React를 18 버전으로 다운그레이드 (package.json 수정 후 npm install)
 
 ```json
 "react": "^18.2.0",
 "react-dom": "^18.2.0"
 ```
-
 
 ### ✅ 도메인 등록 필수
 
@@ -238,6 +237,14 @@ export const categoryMap: Record<string, string> = {
 * 메인 → 문의하기 → 파일 업로드 + 전송 테스트
 * 메인 → 지도 → 길찾기 확인
 * 메인 → 모바일 환경 진입 → 햄버거 메뉴 작동 여부
+
+### 11. 네이버 웹마스터 등록 및 수집 요청 (Search Advisor)
+
+* 네이버 Search Advisor 접속 → 사이트 등록
+* 메타태그 방식으로 소유 인증 진행 (`<meta name="naver-site-verification" ... />` 삽입)
+* 등록 후 3단계 점검 완료 (robots.txt, 메타태그, 제목, OG 태그 등 정상 확인됨)
+* `요청 > 수집 요청` 메뉴에서 주요 페이지별 수집 요청 진행
+* `sitemap.xml` 도 제출 완료
 
 ---
 
