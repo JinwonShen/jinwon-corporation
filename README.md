@@ -73,6 +73,20 @@ NEXT_PUBLIC_KAKAO_API_KEY=카카오에서 발급받은 JavaScript 키
 npm install react-kakao-maps-sdk@2.1.3 --legacy-peer-deps
 ```
 
+### 버전 이슈 및 해결 기록
+
+✅ React 19 → 18 다운그레이드
+	•	react-kakao-maps-sdk가 React 19에서 최초 렌더링 시 지도가 나타나지 않는 문제 발생
+	•	해당 라이브러리가 아직 React 19를 완전히 지원하지 않기 때문으로 판단됨
+	•	해결을 위해 React를 18 버전으로 다운그레이드 (package.json 수정 후 npm install)
+
+
+```json
+"react": "^18.2.0",
+"react-dom": "^18.2.0"
+```
+
+
 ### ✅ 도메인 등록 필수
 
 카카오 맵 SDK는 로컬 및 배포 환경에서도 **도메인 등록**이 필요함:
