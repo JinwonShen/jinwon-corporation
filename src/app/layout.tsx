@@ -41,6 +41,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
 
+        {/* 네이버 웹마스터 HTML 태그 */}
+        <meta name="naver-site-verification" content="43bf0c0813a08c016ce934ebc50e453fdff6c3f6" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
