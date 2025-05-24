@@ -131,7 +131,7 @@ export const productData: Record<string, Product[]> = {
       id: "food-bag-09",
       title: "무짱아찌무침",
       description: "무짱아찌무침 식품용 포장봉투입니다.",
-      thumbnail: "/food-bag-07.jpeg",
+      thumbnail: "/food-bag-09.jpeg",
     },
     {
       id: "food-bag-11",
@@ -149,7 +149,7 @@ export const productData: Record<string, Product[]> = {
       id: "food-bag-08",
       title: "늘푸른 찌개용 김치",
       description: "늘푸른 찌개용 김치 식품용 포장봉투입니다.",
-      thumbnail: "/food-bag-07.jpeg",
+      thumbnail: "/food-bag-08.jpeg",
     },
     {
       id: "food-bag-07",
