@@ -1,8 +1,8 @@
 export const imagePaths = [
-  "/customOrderImg(1).png",
-  "/customOrderImg(2).png",
-  "/customOrderImg(3).png",
-  "/customOrderImg(4).png",
-  "/customOrderImg(5).png",
-  "/customOrderImg(6).png",
+  "/food-bag-03.png",
+  "/food-bag-06.png",
+  "/food-bag-09.png",
+  "/food-bag-07.png",
+  "/food-bag-10.png",
+  "/food-bag-11.png",
 ];
