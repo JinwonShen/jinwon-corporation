@@ -105,9 +105,9 @@ export default function Contact() {
           <textarea name="message" value={formData.message} onChange={handleChange} required />
         </label>
 
-        <label className={styles.file}>
+        {/* <input type="file" name="file" /> */}
+        {/* <label className={styles.file}>
           <span>첨부파일</span>
-          {/* <input type="file" name="file" /> */}
           <input
             type="file"
             id="fileUpload"
@@ -116,7 +116,7 @@ export default function Contact() {
           />
           <label htmlFor="fileUpload">파일 선택</label>
           <span className="fileName">선택된 파일 없음</span>
-        </label>
+        </label> */}
 
         <button type="submit" className={styles.submitButton}>
           문의 보내기
