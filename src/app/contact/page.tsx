@@ -80,7 +80,7 @@ export default function ContactPage() {
         <div className={styles.imgBox}>
           {/* <img src="/contact-title-image.jpeg" alt="진원상사 소개 이미지" /> */}
           <Image
-            src={"/contact-title-image.jpeg"}
+            src={"/mainSlide2.jpeg"}
             alt="진원상사 견적문의 타이틀 이미지"
             width={1080}
             height={300}

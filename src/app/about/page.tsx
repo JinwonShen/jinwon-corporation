@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className={styles.imgBox}>
           {/* <img src="/about-title-image.jpeg" alt="진원상사 소개 이미지" /> */}
           <Image
-            src="/about-title-image.jpeg"
+            src="/mainSlide3.jpeg"
             alt="진원상사 소개 타이틀 이미지"
             width={1080}
             height={300}
