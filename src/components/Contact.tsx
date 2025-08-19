@@ -30,14 +30,14 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
+  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = e.target.files?.[0] || null;
 
-    setFormData((prev) => ({
-      ...prev,
-      file,
-    }));
-  };
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     file,
+  //   }));
+  // };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
