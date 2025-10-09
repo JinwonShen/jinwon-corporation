@@ -6,6 +6,7 @@
 
   h2 {
     font-size: $font-size-2xl;
+    font-weight: bold;
     margin-bottom: 24px;
   }
 
@@ -96,18 +97,15 @@
       padding: 1.6rem 2.4rem;
       height: 48px;
       margin-top: 24px;
-      border-radius: 10000px;
+      border-radius: 1rem;
       outline: 1px solid #fff;
       background-color: $color-primary;
       font-size: $font-size-sm;
-      font-weight: 700;
       color: #fff;
-      transition: all 0.3s;
+      // transition: all 0.3s;
 
       &:hover {
-        background-color: #fff;
-        outline: 1px solid $color-primary;
-        color: $color-primary;
+        background-color: $color-primary-600;
       }
     }
   }

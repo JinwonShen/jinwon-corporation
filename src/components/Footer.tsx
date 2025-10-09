@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
         <h2>
-          <Link href={"/"}>진원상사</Link>
+          <Link href={"/"}>jinwon corporation</Link>
         </h2>
 
         <div className={styles.footerContents}>
@@ -14,9 +14,6 @@ export default function Footer() {
             <ul>
               <li>
                 <Link href={"/about"}>회사소개</Link>
-              </li>
-              <li>
-                <Link href={"/products"}>제품소개</Link>
               </li>
               <li>
                 <Link href={"/contact"}>견적문의</Link>

@@ -45,9 +45,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="naver-site-verification" content="43bf0c0813a08c016ce934ebc50e453fdff6c3f6" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=IBM+Plex+Sans+KR&display=swap"
           rel="stylesheet"
         />
       </head>

@@ -27,16 +27,15 @@ export default function Header() {
   return (
     <header className={headerClass}>
       <h1>
-        <Link href={"/"}>진원상사</Link>
+        <Link href={"/"}>
+          <span className={styles.jinwon}>jinwon</span> corporation
+        </Link>
       </h1>
 
       <nav className={styles.pcMenu}>
         <ul>
           <li>
             <Link href={"/about"}>회사소개</Link>
-          </li>
-          <li>
-            <Link href={"/products"}>제품소개</Link>
           </li>
           <li>
             <Link href={"/contact"}>견적문의</Link>
@@ -69,11 +68,6 @@ export default function Header() {
               <li>
                 <Link href={"/about"} onClick={() => setMenuOpen(false)}>
                   회사소개
-                </Link>
-              </li>
-              <li>
-                <Link href={"/products"} onClick={() => setMenuOpen(false)}>
-                  제품소개
                 </Link>
               </li>
               <li>
