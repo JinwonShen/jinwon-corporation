@@ -19,7 +19,7 @@ export const productCategoriesData: CategoryItem[] = [
     title: "일반 봉투",
     englishTitle: "General Envelope",
     koreanTitle: "손잡이 X",
-    image: "/일반-봉투.png",
+    image: "/product-category(1).png",
     alt: "일반 봉투",
     content: [
       {
@@ -51,7 +51,7 @@ export const productCategoriesData: CategoryItem[] = [
     title: "비닐 쇼핑백",
     englishTitle: "Plastic Shopping Bag",
     koreanTitle: "손잡이 O",
-    image: "/비닐-쇼핑백.png",
+    image: "/product-category(2).png",
     alt: "비닐 쇼핑백",
     content: [
       {
@@ -84,7 +84,7 @@ export const productCategoriesData: CategoryItem[] = [
     title: "식품용 봉투",
     englishTitle: "Food Packaging Bags",
     koreanTitle: "식품 포장용",
-    image: "/식품용-봉투.png",
+    image: "/product-category(3).png",
     alt: "식품용 봉투",
     content: [
       {
@@ -117,7 +117,7 @@ export const productCategoriesData: CategoryItem[] = [
     title: "공업용 봉투",
     englishTitle: "Industrial Bags",
     koreanTitle: "정전기 방지비닐 등",
-    image: "/공업용-봉투.png",
+    image: "/product-category(4).png",
     alt: "공업용 봉투",
     content: [
       {
@@ -151,7 +151,7 @@ export const productCategoriesData: CategoryItem[] = [
     title: "삼방",
     englishTitle: "Three-Side Seal Bag",
     koreanTitle: "삼면 밀봉 봉투",
-    image: "/삼방-봉투.png",
+    image: "/product-category(5).png",
     alt: "삼방 봉투",
     content: [
       {
