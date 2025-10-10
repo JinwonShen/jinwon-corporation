@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import Link from "next/link";
@@ -9,7 +8,6 @@ import styles from "../styles/Header.module.scss";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,11 +19,8 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isSubPage = pathname !== "/"; // 메인페이지가 아닐경우 ?
-  const headerClass = isSubPage ? `${styles.header} ${styles.subHeader}` : styles.header;
-
   return (
-    <header className={headerClass}>
+    <header className={styles.header}>
       <h1>
         <Link href={"/"}>
           <span className={styles.jinwon}>jinwon</span> corporation

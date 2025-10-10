@@ -36,11 +36,11 @@ export default function AboutPage() {
   return (
     <section className={styles.aboutContainer}>
       <div className={styles.titleContainer}>
-        <h1>진원상사</h1>
+        <h1>jinwon corporation</h1>
         <div className={styles.imgBox}>
           {/* <img src="/about-title-image.jpeg" alt="진원상사 소개 이미지" /> */}
           <Image
-            src="/mainSlide3.jpeg"
+            src="/hero-Image(2).jpeg"
             alt="진원상사 소개 타이틀 이미지"
             width={1080}
             height={300}
@@ -106,7 +106,7 @@ export default function AboutPage() {
           {[...certs].map(({ id, src }) => (
             <li key={id}>
               {/* <img src={src} alt={`인증서 ${id}`} /> */}
-              <Image src={src} alt={`인중서 ${id}`} width={275} height={388} placeholder="blur" />
+              <Image src={src} alt={`인증서 ${id}`} width={275} height={388} />
             </li>
           ))}
         </ul>
