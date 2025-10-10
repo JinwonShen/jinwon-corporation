@@ -6,8 +6,6 @@ export interface CategoryContentItem {
 export interface CategoryItem {
   id: string;
   title: string;
-  englishTitle: string;
-  koreanTitle: string;
   image: string;
   alt: string;
   content: CategoryContentItem[];
@@ -16,9 +14,7 @@ export interface CategoryItem {
 export const productCategoriesData: CategoryItem[] = [
   {
     id: "general-envelope",
-    title: "일반 봉투",
-    englishTitle: "General Envelope",
-    koreanTitle: "손잡이 X",
+    title: "일반 봉투(손잡이X)",
     image: "/product-category(1).png",
     alt: "일반 봉투",
     content: [
@@ -48,9 +44,7 @@ export const productCategoriesData: CategoryItem[] = [
   },
   {
     id: "shopping-bag",
-    title: "비닐 쇼핑백",
-    englishTitle: "Plastic Shopping Bag",
-    koreanTitle: "손잡이 O",
+    title: "비닐 쇼핑백(손잡이O)",
     image: "/product-category(2).png",
     alt: "비닐 쇼핑백",
     content: [
@@ -82,8 +76,6 @@ export const productCategoriesData: CategoryItem[] = [
   {
     id: "food-bag",
     title: "식품용 봉투",
-    englishTitle: "Food Packaging Bags",
-    koreanTitle: "식품 포장용",
     image: "/product-category(3).png",
     alt: "식품용 봉투",
     content: [
@@ -115,8 +107,6 @@ export const productCategoriesData: CategoryItem[] = [
   {
     id: "industrial-bag",
     title: "공업용 봉투",
-    englishTitle: "Industrial Bags",
-    koreanTitle: "정전기 방지비닐 등",
     image: "/product-category(4).png",
     alt: "공업용 봉투",
     content: [
@@ -149,8 +139,6 @@ export const productCategoriesData: CategoryItem[] = [
   {
     id: "three-side-seal",
     title: "삼방",
-    englishTitle: "Three-Side Seal Bag",
-    koreanTitle: "삼면 밀봉 봉투",
     image: "/product-category(5).png",
     alt: "삼방 봉투",
     content: [
