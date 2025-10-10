@@ -14,6 +14,7 @@
 
     .titleContainer {
       h2 {
+        font-family: $font-body;
         font-size: $font-size-2xl;
         font-weight: bold;
       }
@@ -97,6 +98,7 @@
 
         .categoryItemTitle {
           h2 {
+            font-family: $font-body;
             font-size: $font-size-sm;
             font-weight: 700;
 
@@ -141,6 +143,7 @@
             }
             
             h3 {
+              font-family: $font-body;
               font-size: $font-size-xs;
               font-weight: 600;
               color: $color-black;

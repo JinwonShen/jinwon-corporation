@@ -1,6 +1,7 @@
 "use client";
 
 import { productCategoriesData } from "@/data/productCategoriesData";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import styles from "../styles/ProductCategories.module.scss";
@@ -8,6 +9,8 @@ import styles from "../styles/ProductCategories.module.scss";
 export default function ProductCategories() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showButtons, setShowButtons] = useState(false);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(titleRef, { once: true, margin: "-100px" });
 
   // 스크롤 가능 여부 체크
   useEffect(() => {
@@ -42,12 +45,22 @@ export default function ProductCategories() {
   return (
     <section className={styles.productCategories}>
       <div className={styles.container}>
-        <div className={styles.titleContainer}>
-          <h2>제품 종류</h2>
-          <span>
+        <div ref={titleRef} className={styles.titleContainer}>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            제품 종류
+          </motion.h2>
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             저희가 제작하고 있는 <span className={styles.highlight}>다양한 제품 종류</span>를
             알아보세요.
-          </span>
+          </motion.span>
         </div>
 
         <div className={styles.sliderContainer}>

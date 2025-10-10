@@ -1,6 +1,7 @@
 "use client";
 
 import { productMaterialsData } from "@/data/productMaterialsData";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import styles from "../styles/ProductMaterials.module.scss";
@@ -8,6 +9,8 @@ import styles from "../styles/ProductMaterials.module.scss";
 export default function ProductMaterials() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showButtons, setShowButtons] = useState(false);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(titleRef, { once: true, margin: "-100px" });
 
   // 스크롤 가능 여부 체크
   useEffect(() => {
@@ -42,12 +45,22 @@ export default function ProductMaterials() {
   return (
     <section className={styles.productMaterials}>
       <div className={styles.container}>
-        <div className={styles.titleContainer}>
-          <h2>제품 소재</h2>
-          <span>
+        <div ref={titleRef} className={styles.titleContainer}>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            제품 소재
+          </motion.h2>
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             저희가 취급하고 있는 <span className={styles.highlight}>소재 및 소재별 특징</span>을
             알아보세요.
-          </span>
+          </motion.span>
         </div>
 
         <div className={styles.sliderContainer}>

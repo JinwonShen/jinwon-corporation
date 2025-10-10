@@ -36,31 +36,39 @@ export default function AboutPage() {
   return (
     <section className={styles.aboutContainer}>
       <div className={styles.titleContainer}>
-        <h1>jinwon corporation</h1>
+        <h1>
+          진원상사,
+          <br /> 작은 봉투에서 시작된 글로벌 경쟁력
+        </h1>
+      </div>
+
+      <article className={styles.greeting}>
         <div className={styles.imgBox}>
           {/* <img src="/about-title-image.jpeg" alt="진원상사 소개 이미지" /> */}
           <Image
             src="/hero-Image(2).jpeg"
             alt="진원상사 소개 타이틀 이미지"
-            width={1080}
-            height={300}
+            width={550}
+            height={350}
             priority
+            className={styles.greetingImage}
           />
         </div>
-      </div>
-
-      <article className={styles.greeting}>
-        <h2 className={styles.greetingTitle}>작은 봉투에서 시작된 글로벌 경쟁력</h2>
-        <p className={styles.greetingText}>
-          진원상사는 노점 시장과 식당 배달봉투, 업체 상품 포장지, 수출용 MSDS 슬라이딩백까지 다양한
-          제품을 이어오며 끊임없는 개발과 혁신을 멈추지 않은 열정의 기업입니다.
-        </p>
-        <br />
-        <p className={styles.greetingText}>
-          소매와 도매를 병행하며 시장용 봉투를 중심으로 사업을 시작한 이래, 공업용, 식품용 등 다양한
-          분야로 생산 영역을 확장해 왔습니다. 고객의 신뢰를 기반으로 품질을 최우선으로 생각하며,
-          오늘날까지도 비닐 가공 전문 제조업체로 한걸음씩 성장하고 있습니다.
-        </p>
+        <div className={styles.greetingTextContainer}>
+          <h2 className={styles.greetingTitle}>
+            시장용 봉투부터 <br /> 수출용 슬라이딩백까지
+          </h2>
+          <p className={styles.greetingText}>
+            진원상사는 노점 시장과 식당 배달봉투, 업체 상품 포장지, 수출용 MSDS 슬라이딩백까지
+            다양한 제품을 이어오며 끊임없는 개발과 혁신을 멈추지 않은 열정의 기업입니다.
+          </p>
+          <br />
+          <p className={styles.greetingText}>
+            소매와 도매를 병행하며 시장용 봉투를 중심으로 사업을 시작한 이래, 공업용, 식품용 등
+            다양한 분야로 생산 영역을 확장해 왔습니다. 고객의 신뢰를 기반으로 품질을 최우선으로
+            생각하며, 오늘날까지도 비닐 가공 전문 제조업체로 한걸음씩 성장하고 있습니다.
+          </p>
+        </div>
       </article>
 
       <article className={styles.overview}>

@@ -14,7 +14,7 @@
   h2 {
     font-family: $font-body;
     font-size: $font-size-2xl;
-    font-weight: 900;
+    font-weight: bold;
     margin-bottom: 2.4rem;
   }
 
@@ -25,64 +25,57 @@
   }
 
   .titleContainer {
-    position: relative;
     width: 100%;
-    height: 300px;
+    height: auto;
 
     h1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
+      top: 24px;
+      left: 0;
+      font-family: $font-body;
       font-size: $font-size-3xl;
       font-weight: bold;
       z-index: 10;
-      color: #fff;
-    }
-    
-    .imgBox {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: 0 60%;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.2); // 딤드 정도 조절 (0.3 ~ 0.6)
-        backdrop-filter: blur(2px); // 💡 블러 처리 추가
-        z-index: 9;
-      }
     }
   }
 
   .greeting {
-    padding-top: 96px;
+    display: flex;
+    gap: 48px;
+    padding-top: 48px;
 
-    .greetingTitle {
-      padding-right: 70%;
-      margin-bottom: 24px;
-      word-break: break-all;
-      word-spacing: 0.5rem;
-      color: $color-primary;
+    .imgBox {
+      min-width: 550px;
+      height: 350px;
+      overflow: hidden;
+      border-bottom-right-radius: 24px;
+      border: 1px solid $color-light-gray;
+
+      .greetingImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
-    .greetingText {     
-      font-size: $font-size-md;
-      line-height: 3.2rem;
-      padding-left: 40%;
-      word-break: break-all;
+    .greetingTextContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      .greetingTitle {
+        margin-bottom: 24px;
+        font-family: $font-body;
+        font-size: $font-size-2xl;
+        font-weight: bold !important;
+        line-height: 4.8rem;
+        color: $color-primary;
+      }
+  
+      .greetingText {     
+        font-size: $font-size-base;
+        line-height: 2.8rem;
+        word-break: break-all;
+      }
     }
   }
 
@@ -90,7 +83,7 @@
     h2 {
       font-family: $font-body;
       font-size: $font-size-2xl;
-      font-weight: 900;
+      font-weight: bold;
       margin-bottom: 48px;
     }
 
@@ -230,17 +223,13 @@
 
 @media (max-width: $breakpoint-tablet) {
   .aboutContainer {
-    .titleContainer {
-      height: 250px !important;
-    }
-
     .greeting {
-      .greetingTitle {
-        padding-right: 50%;
-      }
-  
-      .greetingText {
-        padding-left: 30% !important;
+      flex-direction: column;
+      
+      .imgBox {
+        width: 100%;
+        height: auto;
+        min-height: 300px;
       }
     }
   
@@ -255,13 +244,13 @@
 
 @media (max-width: $breakpoint-mobile) {
   .aboutContainer {
-    .titleContainer {
-      height: 200px !important;
-    }
-
     .greeting {
-      .greetingTitle, .greetingText {
-        padding: 0 !important;
+      flex-direction: column;
+      
+      .imgBox {
+        width: 100%;
+        height: auto;
+        min-height: 250px;
       }
     }
   
