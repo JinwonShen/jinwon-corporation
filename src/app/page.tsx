@@ -6,18 +6,10 @@ import ProductCategories from "@/components/ProductCategories";
 import ProductMaterials from "@/components/ProductMaterials";
 import styles from "@/styles/page.module.scss";
 
-import Script from "next/script";
-
 export default function Home() {
   return (
     <div className={styles.wrapper}>
       <HeroSection />
-      <Script
-        id="kakao-map-sdk"
-        strategy="beforeInteractive"
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false`}
-        {...({} as any)}
-      />
       <main className={styles.main}>
         <CustomOrderContainer />
         <ProductMaterials />

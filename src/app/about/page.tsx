@@ -100,7 +100,9 @@ export default function AboutPage() {
             animate={overviewInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <FaRegBuilding size={24} className={styles.icon} {...({} as any)} />
+            <div className={styles.icon}>
+              <FaRegBuilding size={24} />
+            </div>
             <p>회사명</p>
             <p>진원상사</p>
           </motion.li>
@@ -109,7 +111,9 @@ export default function AboutPage() {
             animate={overviewInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <FaRegCalendar size={24} className={styles.icon} {...({} as any)} />
+            <div className={styles.icon}>
+              <FaRegCalendar size={24} />
+            </div>
             <p>설립연도</p>
             <p>2002년~</p>
           </motion.li>
@@ -118,7 +122,9 @@ export default function AboutPage() {
             animate={overviewInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <FaRegRectangleList size={24} className={styles.icon} {...({} as any)} />
+            <div className={styles.icon}>
+              <FaRegRectangleList size={24} />
+            </div>
             <p>사업분야</p>
             <p>비닐 제조 도.소매</p>
           </motion.li>
@@ -127,7 +133,9 @@ export default function AboutPage() {
             animate={overviewInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <FaRegCircleCheck size={24} className={styles.icon} {...({} as any)} />
+            <div className={styles.icon}>
+              <FaRegCircleCheck size={24} />
+            </div>
             <p>주요제품</p>
             <p>식품용 비닐, 공업용 포장지, 정전기 방지 비닐 등</p>
           </motion.li>

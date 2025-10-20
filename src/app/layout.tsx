@@ -51,9 +51,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=IBM+Plex+Sans+KR&display=swap"
           rel="stylesheet"
         />
+        <script
+          async
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false`}
+        />
       </head>
       <body>
-        <AppShell children={children} />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
