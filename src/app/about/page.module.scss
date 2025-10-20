@@ -44,7 +44,8 @@
     padding-top: 48px;
 
     .imgBox {
-      min-width: 550px;
+      width: 100%;
+      max-width: 550px;
       height: 350px;
       overflow: hidden;
       border-bottom-right-radius: 24px;
