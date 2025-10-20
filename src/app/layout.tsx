@@ -1,7 +1,20 @@
 import "@/styles/globals.scss";
 import type { Metadata } from "next";
+import { Cairo, IBM_Plex_Sans_KR } from "next/font/google";
 import type { ReactNode } from "react";
 import AppShell from "./AppShell"; // ✅ 클라이언트 래퍼 추가
+
+const cairo = Cairo({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
+  variable: "--font-cairo",
+});
+
+const ibmPlexSansKR = IBM_Plex_Sans_KR({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  variable: "--font-ibm-plex-sans-kr",
+});
 
 export const metadata: Metadata = {
   title: "진원상사",
@@ -45,18 +58,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* 네이버 웹마스터 HTML 태그 */}
         <meta name="naver-site-verification" content="43bf0c0813a08c016ce934ebc50e453fdff6c3f6" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=IBM+Plex+Sans+KR&display=swap"
-          rel="stylesheet"
-        />
         <script
           async
           src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false`}
         />
       </head>
-      <body>
+      <body className={`${cairo.variable} ${ibmPlexSansKR.variable}`}>
         <AppShell>{children}</AppShell>
       </body>
     </html>
