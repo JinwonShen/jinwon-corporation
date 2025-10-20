@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/HeroSection.module.scss";
 
 export default function HeroSection() {
@@ -36,16 +37,18 @@ export default function HeroSection() {
               >
                 정직과 신뢰로 만들어낸 품질
               </motion.h1>
-              <motion.button
-                className={styles.ctaButton}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                문의하기
-              </motion.button>
+              <Link href="/contact">
+                <motion.button
+                  className={styles.ctaButton}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  문의하기
+                </motion.button>
+              </Link>
             </div>
           </div>
         </div>
@@ -78,16 +81,18 @@ export default function HeroSection() {
               >
                 믿고 맡길 수 있는 파트너
               </motion.h1>
-              <motion.button
-                className={styles.ctaButton}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                문의하기
-              </motion.button>
+              <Link href="/contact">
+                <motion.button
+                  className={styles.ctaButton}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  문의하기
+                </motion.button>
+              </Link>
             </div>
           </div>
         </div>

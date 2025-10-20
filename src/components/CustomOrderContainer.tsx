@@ -27,24 +27,16 @@ export default function CustomOrderContainer() {
 
   return (
     <article className={styles.customOrderContainer}>
-      <div ref={titleRef} className={styles.textContainer}>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
+      <div className={styles.textContainer}>
+        <h2>
           맞춤<span>/</span>주문제작 전문
-        </motion.h2>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        </h2>
+        <div>
           *최소 주문 수량은 <span>10,000장</span> 입니다. 다양한 제작 사례를 확인해보세요.
-        </motion.div>
+        </div>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div ref={titleRef} className={styles.sliderContainer}>
         <button
           type="button"
           className={`${styles.navButton} ${styles.prevButton}`}
@@ -56,9 +48,12 @@ export default function CustomOrderContainer() {
 
         <div ref={scrollContainerRef} className={styles.imgContainer}>
           {imagePaths.map((path, index) => (
-            <div
+            <motion.div
               key={path}
               className={styles.imgBox}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               onClick={() => setSelectedImage(path)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
@@ -73,7 +68,7 @@ export default function CustomOrderContainer() {
                 height={200}
                 className={styles.img}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
 

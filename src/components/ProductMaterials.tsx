@@ -45,25 +45,15 @@ export default function ProductMaterials() {
   return (
     <section className={styles.productMaterials}>
       <div className={styles.container}>
-        <div ref={titleRef} className={styles.titleContainer}>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            제품 소재
-          </motion.h2>
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+        <div className={styles.titleContainer}>
+          <h2>제품 소재</h2>
+          <span>
             저희가 취급하고 있는 <span className={styles.highlight}>소재 및 소재별 특징</span>을
             알아보세요.
-          </motion.span>
+          </span>
         </div>
 
-        <div className={styles.sliderContainer}>
+        <div ref={titleRef} className={styles.sliderContainer}>
           {showButtons && (
             <button
               type="button"
@@ -76,8 +66,14 @@ export default function ProductMaterials() {
           )}
 
           <div ref={scrollContainerRef} className={styles.materialContainer}>
-            {productMaterialsData.map((material) => (
-              <div key={material.id} className={styles.materialsItem}>
+            {productMaterialsData.map((material, index) => (
+              <motion.div
+                key={material.id}
+                className={styles.materialsItem}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+              >
                 {/* 소재 아이템 타이틀 */}
                 <div className={styles.materialsItemTitle}>
                   <h2>
@@ -111,7 +107,7 @@ export default function ProductMaterials() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

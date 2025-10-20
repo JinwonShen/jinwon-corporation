@@ -1,7 +1,8 @@
 "use client";
 
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
 import styles from "../styles/Contact.module.scss";
 
 type FormDataType = {
@@ -15,6 +16,8 @@ type FormDataType = {
 };
 
 export default function Contact() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState<FormDataType>({
     name: "",
     phone: "",
@@ -62,10 +65,16 @@ export default function Contact() {
   };
 
   return (
-    <div className={styles.contactContainer}>
+    <div ref={containerRef} className={styles.contactContainer}>
       <h2>간편문의</h2>
 
-      <form className={styles.contactForm} onSubmit={handleSubmit}>
+      <motion.form
+        className={styles.contactForm}
+        onSubmit={handleSubmit}
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
         <div className={styles.userInfo}>
           <label className={styles.userName}>
             <span>이름</span>
@@ -121,7 +130,7 @@ export default function Contact() {
         <button type="submit" className={styles.submitButton}>
           문의 보내기
         </button>
-      </form>
+      </motion.form>
     </div>
   );
 }

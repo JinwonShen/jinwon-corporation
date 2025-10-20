@@ -1,6 +1,7 @@
 "use client";
 
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { uploadFile } from "../lib/uploadFile";
 
@@ -79,7 +80,12 @@ export default function ContactPage() {
       </div>
 
       <div className={styles.contactInfo}>
-        <div className={styles.contactMemo}>
+        <motion.div
+          className={styles.contactMemo}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
           {/* 
           이 곳에 문의 상세 설명이 들어갑니다. 
           예를 들면 비닐 종류별 이미지를 통해
@@ -93,9 +99,16 @@ export default function ContactPage() {
             견적문의 하단 첨부파일을 통해 봉투 시안이나, 샘플을 같이 보내주시면 수월하게 제작이
             가능합니다 :)
           </p>
-        </div>
+        </motion.div>
 
-        <form className={styles.form} ref={formRef} onSubmit={handleSubmit}>
+        <motion.form
+          className={styles.form}
+          ref={formRef}
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
           {/* 기본 정보 */}
           <fieldset className={styles.basicInfo}>
             <legend>기본 정보</legend>
@@ -141,10 +154,11 @@ export default function ContactPage() {
               </span>
               <select name="product_type" required>
                 <option value="">선택하세요</option>
-                <option value="봉투">일반봉투</option>
-                <option value="쓰레기봉투">쓰레기봉투</option>
-                <option value="식품용">식품 포장용 봉투</option>
+                <option value="일반봉투">일반 봉투(손잡이 X)</option>
+                <option value="비닐쇼핑백">비닐 쇼핑백(손잡이 O)</option>
+                <option value="식품용">식품용 봉투</option>
                 <option value="공업용">공업용 봉투</option>
+                <option value="삼방">삼방</option>
                 <option value="기타">기타</option>
                 {/* 등등 */}
               </select>
@@ -153,8 +167,11 @@ export default function ContactPage() {
               <span>재질</span>
               <select name="material">
                 <option value="">선택하세요</option>
-                <option value="LDPE">LDPE</option>
                 <option value="HDPE">HDPE</option>
+                <option value="LDPE">LDPE</option>
+                <option value="LLDPE">LLDPE</option>
+                <option value="PP">PP</option>
+                <option value="NY">NY</option>
               </select>
             </label>
             <label>
@@ -163,6 +180,7 @@ export default function ContactPage() {
                 <option value="">선택하세요</option>
                 <option value="엣지씰">엣지씰</option>
                 <option value="하단씰">하단씰</option>
+                <option value="삼면씰">삼면씰</option>
               </select>
             </label>
             <label>
@@ -247,7 +265,7 @@ export default function ContactPage() {
               문의 보내기
             </button>
           </fieldset>
-        </form>
+        </motion.form>
       </div>
     </section>
   );
