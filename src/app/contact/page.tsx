@@ -2,7 +2,7 @@
 
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { uploadFile } from "../lib/uploadFile";
 
 import styles from "./page.module.scss";
@@ -12,7 +12,7 @@ export default function ContactPage() {
   const [uploadedUrl, setUploadedUrl] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
-  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
 
     if (!file) return;
@@ -30,7 +30,7 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formRef.current) return;

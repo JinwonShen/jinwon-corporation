@@ -1,5 +1,6 @@
 import "@/styles/globals.scss";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import AppShell from "./AppShell"; // ✅ 클라이언트 래퍼 추가
 
 export const metadata: Metadata = {
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   description: "비닐 가공 23년, 정직과 신뢰로 만들어낸 품질",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
       <head>
@@ -52,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <AppShell>{children}</AppShell>
+        <AppShell children={children} />
       </body>
     </html>
   );

@@ -2,7 +2,7 @@
 
 import emailjs from "@emailjs/browser";
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import styles from "../styles/Contact.module.scss";
 
 type FormDataType = {
@@ -28,7 +28,7 @@ export default function Contact() {
     link: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -42,7 +42,7 @@ export default function Contact() {
   //   }));
   // };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;

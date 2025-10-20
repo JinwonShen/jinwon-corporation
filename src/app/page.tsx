@@ -13,8 +13,10 @@ export default function Home() {
     <div className={styles.wrapper}>
       <HeroSection />
       <Script
+        id="kakao-map-sdk"
         strategy="beforeInteractive"
         src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&autoload=false`}
+        {...({} as any)}
       />
       <main className={styles.main}>
         <CustomOrderContainer />

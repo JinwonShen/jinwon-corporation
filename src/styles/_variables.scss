@@ -1,8 +1,8 @@
 // src/styles/_variables.scss
 
 // Font families
-$font-title: 'Cairo', sans-serif;
-$font-body: 'IBM Plex Sans KR', sans-serif;
+$font-title: var(--font-cairo), sans-serif;
+$font-body: var(--font-ibm-plex-sans-kr), sans-serif;
 
 // Font sizes
 $font-size-xs: 1.2rem;   // 12px
