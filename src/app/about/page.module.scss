@@ -11,11 +11,10 @@
     padding-bottom: 96px;
   }
 
-  h2 {
+  h1, h2 {
     font-family: $font-body;
     font-size: $font-size-2xl;
     font-weight: bold;
-    margin-bottom: 2.4rem;
   }
 
   p {
@@ -35,6 +34,14 @@
       font-size: $font-size-3xl;
       font-weight: bold;
       z-index: 10;
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: $font-size-2xl;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: $font-size-xl;
+      }
     }
   }
 
@@ -70,6 +77,11 @@
         font-weight: bold !important;
         line-height: 4.8rem;
         color: $color-primary;
+  
+        @media (max-width: $breakpoint-mobile) {
+          line-height: 3.2rem;
+          font-size: $font-size-xl;
+        }
       }
   
       .greetingText {     
@@ -86,6 +98,10 @@
       font-size: $font-size-2xl;
       font-weight: bold;
       margin-bottom: 48px;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: $font-size-xl;
+      }
     }
 
     ul {
@@ -149,6 +165,17 @@
   }
 
   .certificates {
+    h2 {
+      font-family: $font-body;
+      font-size: $font-size-2xl;
+      font-weight: bold;
+      margin-bottom: 48px;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: $font-size-xl;
+      }
+    }
+
     ul {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -171,6 +198,17 @@
     height: auto;
     padding: 0;
     box-sizing: border-box;
+
+    h2 {
+      font-family: $font-body;
+      font-size: $font-size-2xl;
+      font-weight: bold;
+      margin-bottom: 48px;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: $font-size-xl;
+      }
+    }
 
     .locationInfo {
       p {
@@ -225,7 +263,6 @@
 @media (max-width: $breakpoint-tablet) {
   .aboutContainer {
     .greeting {
-      flex-direction: column;
       
       .imgBox {
         width: 100%;

@@ -17,6 +17,14 @@
       font-weight: bold;
       text-align: center;
       z-index: 10;
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: $font-size-2xl;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: $font-size-xl;
+      }
     }
 
     .imgBox {
@@ -293,9 +301,6 @@
 
 @media (max-width: $breakpoint-mobile) {
   .contactContainer {
-    .titleContainer {
-      height: 200px !important;
-    }
 
     .form {
       fieldset {

@@ -18,16 +18,29 @@
       font-family: $font-body;
       font-size: $font-size-2xl;
       font-weight: bold;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: $font-size-xl;
+      }
       
       > span {
         font-family: $font-body;
         font-size: $font-size-2xl;
         color: $color-primary;
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: $font-size-xl;
+        }
       }
     }
 
     div {
+      padding: 8px 24px 0;
       font-size: $font-size-base;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: $font-size-sm;
+      }
 
       > span {
         font-weight: bold;

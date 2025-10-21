@@ -17,13 +17,22 @@
         font-family: $font-body;
         font-size: $font-size-2xl;
         font-weight: bold;
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: $font-size-xl;
+        }
       }
-      span {
+      > span {
+        padding: 8px 24px 0;
         font-size: $font-size-base;
 
         .highlight {
           font-weight: bold;
           color: $color-primary;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+          font-size: $font-size-sm;
         }
       }
     }
