@@ -23,12 +23,12 @@
     @media (max-width: $breakpoint-pc) {
       padding: 100px 24px;
     }
-  
+
     @media (max-width: $breakpoint-tablet) {
       gap: 30px;
       // flex-direction: column;
     }
-  
+
     @media (max-width: $breakpoint-mobile) {
       gap: 20px;
       flex-direction: column;
@@ -103,7 +103,7 @@
           .ctaButton {
             margin-top: 2.4rem;
             padding: 1.6rem 2.4rem;
-            border-radius: 1rem;
+            border-radius: 0 0 1rem 0;
             background-color: $color-primary;
             color: #fff;
             font-size: $font-size-base;
@@ -117,5 +117,3 @@
     }
   }
 }
-
-

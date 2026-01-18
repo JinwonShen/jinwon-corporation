@@ -1,4 +1,4 @@
-@use '_variables' as *;
+@use "_variables" as *;
 
 .contactContainer {
   width: calc(50% - 12px);
@@ -85,8 +85,8 @@
       flex-wrap: wrap;
 
       label {
-        
-        &:nth-child(1), &:nth-child(2) {
+        &:nth-child(1),
+        &:nth-child(2) {
           width: calc(50% - 12px);
         }
 
@@ -102,7 +102,7 @@
       padding: 1.6rem 2.4rem;
       height: 48px;
       margin-top: 24px;
-      border-radius: 1rem;
+      border-radius: 0 0 1rem 0;
       outline: 1px solid #fff;
       background-color: $color-primary;
       font-size: $font-size-sm;

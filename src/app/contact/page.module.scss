@@ -1,4 +1,4 @@
-@use '../../styles/_variables' as *;
+@use "../../styles/_variables" as *;
 
 .contactContainer {
   width: 100%;
@@ -9,7 +9,6 @@
   padding-top: 100px;
 
   .titleContainer {
-
     h1 {
       word-break: keep-all;
       font-family: $font-body;
@@ -52,7 +51,7 @@
       }
     }
   }
-  
+
   .contactInfo {
     padding-top: 2.4rem;
 
@@ -65,7 +64,7 @@
       p {
         line-height: 2.8rem;
         font-size: $font-size-sm;
-      } 
+      }
     }
 
     .form {
@@ -91,7 +90,7 @@
           border-bottom: 1px solid $color-light-gray;
           font-size: $font-size-sm;
           padding: 1rem 0;
-          
+
           span {
             flex-shrink: 0;
           }
@@ -101,7 +100,7 @@
             padding-left: 2rem;
 
             &::placeholder {
-              color: rgba(0, 0, 0, 0.2)
+              color: rgba(0, 0, 0, 0.2);
             }
           }
 
@@ -109,7 +108,7 @@
             width: 50%;
             padding-left: 1rem;
           }
-        }        
+        }
       }
 
       .productInfo {
@@ -140,7 +139,7 @@
             flex-basis: 80px;
             display: inline-block;
             padding: 0.8rem 1.2rem;
-            border-radius: 0.8rem;
+            border-radius: 0 0 0.8rem 0;
             outline: 1px solid #fff;
             background-color: $color-primary;
             color: #fff;
@@ -161,7 +160,8 @@
         flex-direction: row;
         justify-content: space-between;
 
-        .contact, .agree {
+        .contact,
+        .agree {
           width: calc(50% - 2.4rem);
           height: 100%;
         }
@@ -210,12 +210,12 @@
             &::-webkit-scrollbar {
               width: 6px;
             }
-            
+
             &::-webkit-scrollbar-thumb {
               background: $color-primary; // 손잡이만 primary 컬러
               border-radius: 3px;
             }
-            
+
             &::-webkit-scrollbar-track {
               background: #f0f0f0; // 트랙도 밝게 통일
               border-radius: 3px;
@@ -234,16 +234,16 @@
           label {
             display: flex;
             border: none;
-  
+
             input {
               appearance: none;
               width: 16px !important;
               height: 20px;
               border: 1px solid #ccc;
-  
+
               &:checked {
                 background-color: $color-primary;
-          
+
                 &::after {
                   content: "✔";
                   position: absolute;
@@ -261,7 +261,7 @@
           // align-self: flex-end;
           margin-left: auto;
           padding: 1.6rem 2.4rem;
-          border-radius: 0.8rem;
+          border-radius: 0 0 1rem 0;
           outline: 1px solid #fff;
           background-color: $color-primary;
           font-size: $font-size-sm;
@@ -301,24 +301,24 @@
 
 @media (max-width: $breakpoint-mobile) {
   .contactContainer {
-
     .form {
       fieldset {
         flex-direction: column !important;
-    
+
         label {
           width: 100% !important;
           display: flex;
           justify-content: space-between;
-    
+
           select {
             width: 100%;
           }
-        }        
+        }
       }
-  
+
       .contactContent {
-        .contact, .agree {
+        .contact,
+        .agree {
           width: 100% !important;
         }
       }
